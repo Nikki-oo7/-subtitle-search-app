@@ -1,0 +1,2757 @@
+WEBVTT - Subtitles by: DownloadYoutubeSubtitles.com
+
+00:00:03.040 --> 00:00:08.960
+hello and welcome to the session on deep
+
+00:00:05.920 --> 00:00:11.599
+learning my name is mohan and in this
+
+00:00:08.960 --> 00:00:14.080
+video we are going to talk about what
+
+00:00:11.599 --> 00:00:16.160
+deep learning is all about some of you
+
+00:00:14.080 --> 00:00:19.520
+may be already familiar with the image
+
+00:00:16.160 --> 00:00:22.640
+recognition how does image recognition
+
+00:00:19.520 --> 00:00:25.680
+work you can train this application or
+
+00:00:22.640 --> 00:00:28.080
+your machine to recognize whether a
+
+00:00:25.680 --> 00:00:30.080
+given image is a cat or a dog and this
+
+00:00:28.080 --> 00:00:32.239
+is how it works at a very high level it
+
+00:00:30.080 --> 00:00:34.480
+uses artificial neural network it is
+
+00:00:32.239 --> 00:00:36.559
+trained with some known images and
+
+00:00:34.480 --> 00:00:38.960
+during the training it is told if it is
+
+00:00:36.559 --> 00:00:41.040
+recognizing correctly or not and then
+
+00:00:38.960 --> 00:00:42.960
+when new images are submitted it
+
+00:00:41.040 --> 00:00:45.680
+recognizes correctly based on the
+
+00:00:42.960 --> 00:00:47.600
+accuracy of course so a little quick
+
+00:00:45.680 --> 00:00:50.480
+understanding about artificial neural
+
+00:00:47.600 --> 00:00:53.600
+networks so this is the way it does is
+
+00:00:50.480 --> 00:00:56.000
+you provide a lot of training data also
+
+00:00:53.600 --> 00:00:59.359
+known as labeled data for example in
+
+00:00:56.000 --> 00:01:02.640
+this case these are the images of dogs
+
+00:00:59.359 --> 00:01:05.600
+and the network extracts some features
+
+00:01:02.640 --> 00:01:08.640
+that makes a dog a dog right so that is
+
+00:01:05.600 --> 00:01:11.760
+known as feature extraction and based on
+
+00:01:08.640 --> 00:01:13.760
+that when you submit a new image of dog
+
+00:01:11.760 --> 00:01:15.119
+the basic features remain pretty much
+
+00:01:13.760 --> 00:01:17.759
+the same it may be a completely
+
+00:01:15.119 --> 00:01:21.280
+different image but the features of a
+
+00:01:17.759 --> 00:01:23.200
+dog still remain pretty much the same in
+
+00:01:21.280 --> 00:01:25.680
+various different images let's say
+
+00:01:23.200 --> 00:01:28.000
+compared to a cat and that's the way
+
+00:01:25.680 --> 00:01:30.479
+artificial neural network works we'll go
+
+00:01:28.000 --> 00:01:32.240
+into details of this uh very shortly and
+
+00:01:30.479 --> 00:01:35.119
+once the training is done with training
+
+00:01:32.240 --> 00:01:37.439
+data we then test it with some test data
+
+00:01:35.119 --> 00:01:39.840
+too which is basically completely new
+
+00:01:37.439 --> 00:01:42.240
+data which the system has not seen
+
+00:01:39.840 --> 00:01:43.920
+before unlike the training data and then
+
+00:01:42.240 --> 00:01:46.560
+we find out whether it is predicting
+
+00:01:43.920 --> 00:01:49.280
+correctly or not thereby we know whether
+
+00:01:46.560 --> 00:01:50.799
+the training is complete or it needs
+
+00:01:49.280 --> 00:01:53.119
+more training so that's not a very high
+
+00:01:50.799 --> 00:01:55.040
+level artificial neural network works so
+
+00:01:53.119 --> 00:01:57.119
+this is what we are going to talk about
+
+00:01:55.040 --> 00:01:59.200
+today our agenda looks something like
+
+00:01:57.119 --> 00:02:00.799
+this what is deep learning why do we
+
+00:01:59.200 --> 00:02:03.040
+need deep learning and then what are the
+
+00:02:00.799 --> 00:02:05.920
+applications of deep learning one of the
+
+00:02:03.040 --> 00:02:08.239
+main components the secret sauce in deep
+
+00:02:05.920 --> 00:02:09.599
+learning is neural networks so we're
+
+00:02:08.239 --> 00:02:10.879
+going to talk about what is neural
+
+00:02:09.599 --> 00:02:12.879
+network and
+
+00:02:10.879 --> 00:02:15.520
+how it works and some of its components
+
+00:02:12.879 --> 00:02:17.440
+like for example the activation function
+
+00:02:15.520 --> 00:02:20.160
+the gradient descent and so on and so
+
+00:02:17.440 --> 00:02:21.680
+forth so that as a part of working of a
+
+00:02:20.160 --> 00:02:23.520
+neural network we will go into little
+
+00:02:21.680 --> 00:02:26.720
+bit more details how this whole thing
+
+00:02:23.520 --> 00:02:29.360
+works so without much further ado let's
+
+00:02:26.720 --> 00:02:31.520
+get started so deep learning is
+
+00:02:29.360 --> 00:02:34.080
+considered to be a part of machine
+
+00:02:31.520 --> 00:02:36.720
+learning so this diagram very nicely
+
+00:02:34.080 --> 00:02:39.599
+depicts what deep learning is at a very
+
+00:02:36.720 --> 00:02:42.480
+high level you have the all-encompassing
+
+00:02:39.599 --> 00:02:45.840
+artificial intelligence which is more a
+
+00:02:42.480 --> 00:02:47.680
+concept rather than a technology or a
+
+00:02:45.840 --> 00:02:49.280
+technical concept right so it is it's
+
+00:02:47.680 --> 00:02:51.440
+more of a concept at a very high level
+
+00:02:49.280 --> 00:02:53.200
+artificial intelligence under the herd
+
+00:02:51.440 --> 00:02:55.360
+is actually machine learning and deep
+
+00:02:53.200 --> 00:02:58.560
+learning and machine learning is a
+
+00:02:55.360 --> 00:03:01.840
+broader concept you can say or a broader
+
+00:02:58.560 --> 00:03:03.280
+technology and deep learning is a subset
+
+00:03:01.840 --> 00:03:05.440
+of machine learning the primary
+
+00:03:03.280 --> 00:03:07.920
+difference between machine learning and
+
+00:03:05.440 --> 00:03:11.519
+deep learning is that deep learning uses
+
+00:03:07.920 --> 00:03:14.080
+neural networks and it is suitable for
+
+00:03:11.519 --> 00:03:16.480
+handling large amounts of unstructured
+
+00:03:14.080 --> 00:03:18.080
+data and the last but not least one of
+
+00:03:16.480 --> 00:03:19.599
+the major differences between machine
+
+00:03:18.080 --> 00:03:22.080
+learning and deep learning is that in
+
+00:03:19.599 --> 00:03:24.640
+machine learning the feature extraction
+
+00:03:22.080 --> 00:03:26.959
+or the feature engineering is done by
+
+00:03:24.640 --> 00:03:29.280
+the data scientists manually but in deep
+
+00:03:26.959 --> 00:03:30.799
+learning since we use neural networks
+
+00:03:29.280 --> 00:03:32.720
+the feature engineering happens
+
+00:03:30.799 --> 00:03:34.720
+automatically so that's a little bit of
+
+00:03:32.720 --> 00:03:36.000
+a quick difference between machine
+
+00:03:34.720 --> 00:03:38.159
+learning and deep learning and this
+
+00:03:36.000 --> 00:03:40.000
+diagram very nicely depicts the relation
+
+00:03:38.159 --> 00:03:42.239
+between artificial intelligence machine
+
+00:03:40.000 --> 00:03:44.319
+learning and deep learning now why do we
+
+00:03:42.239 --> 00:03:47.040
+need deep learning machine learning was
+
+00:03:44.319 --> 00:03:49.120
+there for quite some time and it can do
+
+00:03:47.040 --> 00:03:51.599
+a lot of stuff that probably what deep
+
+00:03:49.120 --> 00:03:53.680
+learning can do but it's not very good
+
+00:03:51.599 --> 00:03:57.200
+at handling large amounts of
+
+00:03:53.680 --> 00:03:59.920
+unstructured data like images voice or
+
+00:03:57.200 --> 00:04:01.920
+even text for that matter so traditional
+
+00:03:59.920 --> 00:04:03.519
+machine learning is not that very good
+
+00:04:01.920 --> 00:04:05.040
+at doing this traditional machine
+
+00:04:03.519 --> 00:04:07.040
+learning can handle large amounts of
+
+00:04:05.040 --> 00:04:09.120
+structured data but when it comes to
+
+00:04:07.040 --> 00:04:10.480
+unstructured data it's a big challenge
+
+00:04:09.120 --> 00:04:12.560
+so that is one of the key
+
+00:04:10.480 --> 00:04:15.519
+differentiators for deep learning so
+
+00:04:12.560 --> 00:04:18.320
+that is number one and increasingly for
+
+00:04:15.519 --> 00:04:20.400
+artificial intelligence we need image
+
+00:04:18.320 --> 00:04:22.320
+recognition and we need to process
+
+00:04:20.400 --> 00:04:23.680
+analyze images and voice that's the
+
+00:04:22.320 --> 00:04:25.520
+reason deep learning is required
+
+00:04:23.680 --> 00:04:27.840
+compared to let's say traditional
+
+00:04:25.520 --> 00:04:31.199
+machine learning it can also perform
+
+00:04:27.840 --> 00:04:33.120
+complex algorithms more complex than
+
+00:04:31.199 --> 00:04:35.919
+let's say what machine learning can do
+
+00:04:33.120 --> 00:04:38.000
+and it can achieve best performance with
+
+00:04:35.919 --> 00:04:39.919
+the large amounts of data so the more
+
+00:04:38.000 --> 00:04:42.800
+you have the data let's say reference
+
+00:04:39.919 --> 00:04:44.639
+data or label data the better the system
+
+00:04:42.800 --> 00:04:46.960
+will do because the training process
+
+00:04:44.639 --> 00:04:49.040
+will be that much better and last but
+
+00:04:46.960 --> 00:04:51.600
+not least with deep learning you can
+
+00:04:49.040 --> 00:04:53.360
+really avoid the manual process of
+
+00:04:51.600 --> 00:04:55.280
+feature extraction those are some of the
+
+00:04:53.360 --> 00:04:57.120
+reasons why we need deep learning some
+
+00:04:55.280 --> 00:05:00.160
+of the applications of deep learning
+
+00:04:57.120 --> 00:05:02.960
+deep learning has made major inroads and
+
+00:05:00.160 --> 00:05:05.440
+it is a major area in which deep
+
+00:05:02.960 --> 00:05:08.880
+learning is applied is healthcare and
+
+00:05:05.440 --> 00:05:12.080
+within healthcare particularly oncology
+
+00:05:08.880 --> 00:05:15.199
+which is basically cancer related stuff
+
+00:05:12.080 --> 00:05:17.919
+one of the issues with cancer is that a
+
+00:05:15.199 --> 00:05:20.960
+lot of cancers today are curable they
+
+00:05:17.919 --> 00:05:23.360
+can be cured they are detected early on
+
+00:05:20.960 --> 00:05:25.600
+and the challenge with that is when a
+
+00:05:23.360 --> 00:05:28.080
+diagnostics is performed let's say an
+
+00:05:25.600 --> 00:05:30.320
+image has been taken of a patient to
+
+00:05:28.080 --> 00:05:33.120
+detect whether there is cancer or not
+
+00:05:30.320 --> 00:05:35.120
+you need a specialist to look at the
+
+00:05:33.120 --> 00:05:38.080
+image and determine whether it is the
+
+00:05:35.120 --> 00:05:41.199
+patient is fine or there is any onset of
+
+00:05:38.080 --> 00:05:44.160
+cancer and the number of specialists are
+
+00:05:41.199 --> 00:05:46.639
+limited so if we use deep learning if we
+
+00:05:44.160 --> 00:05:48.880
+use automation here or if we use
+
+00:05:46.639 --> 00:05:52.000
+artificial intelligence here then the
+
+00:05:48.880 --> 00:05:54.639
+system can with a certain amount of the
+
+00:05:52.000 --> 00:05:57.520
+good amount of accuracy determine
+
+00:05:54.639 --> 00:06:00.000
+whether a particular patient is having
+
+00:05:57.520 --> 00:06:02.960
+cancer or not so the prediction or the
+
+00:06:00.000 --> 00:06:05.919
+detection process of a disease like
+
+00:06:02.960 --> 00:06:08.160
+cancer can be expedited the detection
+
+00:06:05.919 --> 00:06:10.800
+process can be expedited can be faster
+
+00:06:08.160 --> 00:06:13.600
+without really waiting for a specialist
+
+00:06:10.800 --> 00:06:15.919
+we can obviously then once the
+
+00:06:13.600 --> 00:06:18.479
+application once the artificial
+
+00:06:15.919 --> 00:06:20.800
+intelligence detects or predicts that
+
+00:06:18.479 --> 00:06:23.120
+there is an onset of a cancer this can
+
+00:06:20.800 --> 00:06:25.680
+be cross-checked by a doctor but at
+
+00:06:23.120 --> 00:06:27.520
+least the initial screening process can
+
+00:06:25.680 --> 00:06:29.919
+be automated and that is where the
+
+00:06:27.520 --> 00:06:32.160
+current focus is with respect to deep
+
+00:06:29.919 --> 00:06:34.560
+learning in healthcare what else
+
+00:06:32.160 --> 00:06:38.319
+robotics is another area deep learning
+
+00:06:34.560 --> 00:06:40.880
+is majorly used in robotics and you must
+
+00:06:38.319 --> 00:06:43.199
+have seen nowadays robots are everywhere
+
+00:06:40.880 --> 00:06:45.120
+humanoids the industrial robots which
+
+00:06:43.199 --> 00:06:48.080
+are used for manufacturing process you
+
+00:06:45.120 --> 00:06:50.639
+must have heard about sofia who got
+
+00:06:48.080 --> 00:06:53.360
+citizenship with saudi arabia and so on
+
+00:06:50.639 --> 00:06:55.840
+there are multiple such robots which are
+
+00:06:53.360 --> 00:06:58.880
+knowledge oriented but there are also
+
+00:06:55.840 --> 00:07:00.639
+industrial robots are used in industries
+
+00:06:58.880 --> 00:07:03.120
+in the manufacturing process and
+
+00:07:00.639 --> 00:07:05.440
+increasingly in security and also in
+
+00:07:03.120 --> 00:07:07.840
+defense for example image processing
+
+00:07:05.440 --> 00:07:10.080
+video is fed to them and they need to be
+
+00:07:07.840 --> 00:07:11.599
+able to detect objects obstacles and so
+
+00:07:10.080 --> 00:07:13.520
+on and so forth so that's where deep
+
+00:07:11.599 --> 00:07:15.599
+learning is used they need to be able to
+
+00:07:13.520 --> 00:07:17.520
+hear and make sense of the sounds that
+
+00:07:15.599 --> 00:07:20.400
+they are hearing that needs deep
+
+00:07:17.520 --> 00:07:22.800
+learning as well so robotics is a major
+
+00:07:20.400 --> 00:07:25.680
+area where deep learning is applied then
+
+00:07:22.800 --> 00:07:27.919
+we have self-driving cars or autonomous
+
+00:07:25.680 --> 00:07:30.960
+cars you must have heard of google's
+
+00:07:27.919 --> 00:07:33.759
+autonomous car which has been tested for
+
+00:07:30.960 --> 00:07:35.440
+millions of miles and pretty much
+
+00:07:33.759 --> 00:07:37.120
+incident free there were of course a
+
+00:07:35.440 --> 00:07:39.759
+couple of incidents here and there but
+
+00:07:37.120 --> 00:07:42.880
+it is uh considered to be fairly safe
+
+00:07:39.759 --> 00:07:45.120
+and there are today a lot of automotive
+
+00:07:42.880 --> 00:07:47.520
+companies in fact pretty much every
+
+00:07:45.120 --> 00:07:49.919
+automotive company worth its name is
+
+00:07:47.520 --> 00:07:52.080
+investing in self-driving cars or
+
+00:07:49.919 --> 00:07:54.560
+autonomous cars and it is predicted that
+
+00:07:52.080 --> 00:07:56.160
+in the next probably 10 to 15 years
+
+00:07:54.560 --> 00:07:59.120
+these will be in production and they
+
+00:07:56.160 --> 00:08:01.039
+will be used extensively in real life
+
+00:07:59.120 --> 00:08:03.039
+right now they are all in rnd and in
+
+00:08:01.039 --> 00:08:05.360
+test phases but pretty soon these will
+
+00:08:03.039 --> 00:08:07.280
+be on the road so this is another area
+
+00:08:05.360 --> 00:08:08.960
+where deep learning is used and how is
+
+00:08:07.280 --> 00:08:11.759
+it used where is it used within
+
+00:08:08.960 --> 00:08:14.960
+autonomous driving the car actually is
+
+00:08:11.759 --> 00:08:17.039
+fed with video of surroundings and it is
+
+00:08:14.960 --> 00:08:18.879
+supposed to process that information
+
+00:08:17.039 --> 00:08:20.800
+process that video and determine if
+
+00:08:18.879 --> 00:08:23.039
+there are any obstacles it has to
+
+00:08:20.800 --> 00:08:25.759
+determine if there are any cars in the
+
+00:08:23.039 --> 00:08:28.160
+site will detect whether it is driving
+
+00:08:25.759 --> 00:08:31.759
+in the lane also it has to determine
+
+00:08:28.160 --> 00:08:34.159
+whether the signal is green or red so
+
+00:08:31.759 --> 00:08:37.760
+that accordingly it can move forward or
+
+00:08:34.159 --> 00:08:39.599
+wait so for all these video analysis
+
+00:08:37.760 --> 00:08:41.919
+deep learning is used in addition to
+
+00:08:39.599 --> 00:08:44.720
+that the training overall training to
+
+00:08:41.919 --> 00:08:47.200
+drive the car happens in a deep learning
+
+00:08:44.720 --> 00:08:48.720
+environment so again a lot of scope here
+
+00:08:47.200 --> 00:08:51.120
+to use deep learning a couple of other
+
+00:08:48.720 --> 00:08:54.880
+applications are mission translations
+
+00:08:51.120 --> 00:08:57.760
+today we have a lot of information and
+
+00:08:54.880 --> 00:08:59.519
+very often this information is in one
+
+00:08:57.760 --> 00:09:03.120
+particular language and more
+
+00:08:59.519 --> 00:09:05.519
+specifically in english and people need
+
+00:09:03.120 --> 00:09:08.560
+information in various parts of the
+
+00:09:05.519 --> 00:09:11.120
+world it is pretty difficult for human
+
+00:09:08.560 --> 00:09:13.519
+beings to translate each and every piece
+
+00:09:11.120 --> 00:09:15.279
+of information or every document into
+
+00:09:13.519 --> 00:09:17.440
+all possible languages there are
+
+00:09:15.279 --> 00:09:19.600
+probably at least hundreds of languages
+
+00:09:17.440 --> 00:09:22.720
+or if not more to translate each and
+
+00:09:19.600 --> 00:09:25.920
+every document into every language is
+
+00:09:22.720 --> 00:09:28.560
+pretty difficult therefore we can use
+
+00:09:25.920 --> 00:09:31.440
+deep learning to do pretty much like a
+
+00:09:28.560 --> 00:09:33.200
+real-time translation mechanism so we
+
+00:09:31.440 --> 00:09:36.160
+don't have to translate everything and
+
+00:09:33.200 --> 00:09:38.640
+keep it ready but we train applications
+
+00:09:36.160 --> 00:09:41.519
+or artificial intelligence systems that
+
+00:09:38.640 --> 00:09:44.560
+will do the translation on the fly for
+
+00:09:41.519 --> 00:09:46.320
+example you go to somewhere like china
+
+00:09:44.560 --> 00:09:48.480
+and you want to know what is written on
+
+00:09:46.320 --> 00:09:50.800
+a signboard now it is impossible for
+
+00:09:48.480 --> 00:09:52.800
+somebody to translate that and put it on
+
+00:09:50.800 --> 00:09:55.440
+the web or something like that so you
+
+00:09:52.800 --> 00:09:57.920
+have an application which is trained to
+
+00:09:55.440 --> 00:10:00.000
+translate stuff on the fly so you
+
+00:09:57.920 --> 00:10:02.240
+probably this can be running on your
+
+00:10:00.000 --> 00:10:05.200
+mobile phone on your smartphone you scan
+
+00:10:02.240 --> 00:10:07.440
+this the application will instantly
+
+00:10:05.200 --> 00:10:10.240
+translate that from chinese to english
+
+00:10:07.440 --> 00:10:11.760
+that is one then there could be web
+
+00:10:10.240 --> 00:10:14.399
+applications where there may be a
+
+00:10:11.760 --> 00:10:16.640
+research document which is all in maybe
+
+00:10:14.399 --> 00:10:19.839
+chinese or japanese and you want to
+
+00:10:16.640 --> 00:10:22.000
+translate that to study that document or
+
+00:10:19.839 --> 00:10:23.839
+in that case you need to translate so
+
+00:10:22.000 --> 00:10:26.160
+therefore deep learning is used in such
+
+00:10:23.839 --> 00:10:28.160
+situations as well and that is again on
+
+00:10:26.160 --> 00:10:30.240
+demand so it is not like you have to
+
+00:10:28.160 --> 00:10:31.920
+translate all these documents from other
+
+00:10:30.240 --> 00:10:34.000
+languages into english and one shot and
+
+00:10:31.920 --> 00:10:36.480
+keep it somewhere that is again pretty
+
+00:10:34.000 --> 00:10:38.160
+much an impossible task but on a neat
+
+00:10:36.480 --> 00:10:40.399
+basis so you have systems that are
+
+00:10:38.160 --> 00:10:42.000
+trained to translate on the fly so
+
+00:10:40.399 --> 00:10:43.600
+mission translation is another major
+
+00:10:42.000 --> 00:10:45.920
+area where deep learning is used then
+
+00:10:43.600 --> 00:10:48.800
+there are a few other upcoming areas
+
+00:10:45.920 --> 00:10:51.279
+where synthesizing is done by neural
+
+00:10:48.800 --> 00:10:53.680
+nets for example music composition and
+
+00:10:51.279 --> 00:10:56.880
+generation of music so you can train a
+
+00:10:53.680 --> 00:10:59.680
+neural net to produce music even to
+
+00:10:56.880 --> 00:11:02.000
+compose music so this is a fun thing
+
+00:10:59.680 --> 00:11:04.720
+this is still upcoming it needs a lot of
+
+00:11:02.000 --> 00:11:06.640
+effort to train such neural net it has
+
+00:11:04.720 --> 00:11:09.120
+been proved that it is possible so this
+
+00:11:06.640 --> 00:11:11.760
+is a relatively new area and on the same
+
+00:11:09.120 --> 00:11:13.920
+lines colorization of images so these
+
+00:11:11.760 --> 00:11:15.839
+two images on the left hand side is a
+
+00:11:13.920 --> 00:11:18.720
+grayscale image or a black and white
+
+00:11:15.839 --> 00:11:20.480
+image this was colored by a neural net
+
+00:11:18.720 --> 00:11:22.959
+or a deep learning application as you
+
+00:11:20.480 --> 00:11:25.040
+can see it's done a very good job of
+
+00:11:22.959 --> 00:11:28.000
+applying the colors and obviously this
+
+00:11:25.040 --> 00:11:30.320
+was trained to do this colorization but
+
+00:11:28.000 --> 00:11:33.360
+yes this is one more application of deep
+
+00:11:30.320 --> 00:11:37.279
+learning now one of the major secret
+
+00:11:33.360 --> 00:11:40.160
+sauce of deep learning is neural network
+
+00:11:37.279 --> 00:11:42.240
+deep learning works on neural network or
+
+00:11:40.160 --> 00:11:45.279
+consists of neural network so let us see
+
+00:11:42.240 --> 00:11:49.040
+what is neural network neural network or
+
+00:11:45.279 --> 00:11:53.360
+artificial neural network is designed or
+
+00:11:49.040 --> 00:11:56.880
+based on the human brain now human brain
+
+00:11:53.360 --> 00:11:59.519
+consists of billions of small cells that
+
+00:11:56.880 --> 00:12:03.120
+are known as neurons artificial neural
+
+00:11:59.519 --> 00:12:05.519
+networks is in a way trying to simulate
+
+00:12:03.120 --> 00:12:07.839
+the human brain so this is a quick
+
+00:12:05.519 --> 00:12:10.399
+diagram of biological neuron a
+
+00:12:07.839 --> 00:12:12.959
+biological neuron consists of the major
+
+00:12:10.399 --> 00:12:16.079
+part which is the cell nucleus and then
+
+00:12:12.959 --> 00:12:18.240
+it has some tentacles kind of stuff on
+
+00:12:16.079 --> 00:12:20.160
+the top called dendrite and then there
+
+00:12:18.240 --> 00:12:22.399
+is like a long tail which is known as
+
+00:12:20.160 --> 00:12:24.240
+the axon further again at the end of
+
+00:12:22.399 --> 00:12:27.680
+this action are what are known as
+
+00:12:24.240 --> 00:12:30.880
+synapses these in turn are connected to
+
+00:12:27.680 --> 00:12:33.680
+the dendrites of the next neuron and all
+
+00:12:30.880 --> 00:12:35.440
+these neurons are interconnected with
+
+00:12:33.680 --> 00:12:37.519
+each other therefore they are like
+
+00:12:35.440 --> 00:12:39.440
+billions of them sitting in our brain
+
+00:12:37.519 --> 00:12:42.000
+and they're all active they're working
+
+00:12:39.440 --> 00:12:45.360
+they based on the signals they receive
+
+00:12:42.000 --> 00:12:47.920
+signals as inputs from other neurons or
+
+00:12:45.360 --> 00:12:50.639
+maybe from other parts of the body and
+
+00:12:47.920 --> 00:12:52.720
+based on certain criteria they send
+
+00:12:50.639 --> 00:12:54.800
+signals to the neurons at the other end
+
+00:12:52.720 --> 00:12:56.880
+so they they get either activated or
+
+00:12:54.800 --> 00:12:59.760
+they don't get activated based on so it
+
+00:12:56.880 --> 00:13:02.480
+is like a binary gates so they get
+
+00:12:59.760 --> 00:13:04.800
+activated or not activated based on the
+
+00:13:02.480 --> 00:13:06.399
+inputs that they receive and so on so we
+
+00:13:04.800 --> 00:13:08.720
+will see a little bit of those details
+
+00:13:06.399 --> 00:13:10.880
+as we move forward in our artificial
+
+00:13:08.720 --> 00:13:12.320
+neuron but this is a biological neuron
+
+00:13:10.880 --> 00:13:15.200
+this is the structure of a biological
+
+00:13:12.320 --> 00:13:17.680
+neuron and artificial neural network is
+
+00:13:15.200 --> 00:13:20.320
+based on the human brain the smallest
+
+00:13:17.680 --> 00:13:23.440
+component of artificial neural network
+
+00:13:20.320 --> 00:13:25.839
+is an artificial neuron as shown here
+
+00:13:23.440 --> 00:13:28.000
+sometimes is also referred to as
+
+00:13:25.839 --> 00:13:30.240
+perceptron now this is a very high level
+
+00:13:28.000 --> 00:13:32.800
+diagram the artificial neuron has a
+
+00:13:30.240 --> 00:13:35.760
+small central unit which will receive
+
+00:13:32.800 --> 00:13:38.320
+the input if it is doing let's say image
+
+00:13:35.760 --> 00:13:41.040
+processing the inputs could be pixel
+
+00:13:38.320 --> 00:13:44.480
+values of the image which is represented
+
+00:13:41.040 --> 00:13:47.680
+here as x1 x2 and so on each of the
+
+00:13:44.480 --> 00:13:50.320
+inputs are multiplied by what is known
+
+00:13:47.680 --> 00:13:53.200
+as weights which are represented as w1
+
+00:13:50.320 --> 00:13:56.240
+w2 and so on there is in the central
+
+00:13:53.200 --> 00:13:59.600
+unit basically there is a summation of
+
+00:13:56.240 --> 00:14:03.279
+these weighted inputs which is like x1
+
+00:13:59.600 --> 00:14:06.160
+into w1 plus x2 into w2 and so on the
+
+00:14:03.279 --> 00:14:08.079
+products are then added and then there
+
+00:14:06.160 --> 00:14:10.720
+is a bias that is added to that in the
+
+00:14:08.079 --> 00:14:12.959
+next slide we will see that passes
+
+00:14:10.720 --> 00:14:16.160
+through an activation function and the
+
+00:14:12.959 --> 00:14:18.720
+output comes as a y which is the output
+
+00:14:16.160 --> 00:14:20.880
+and based on certain criteria the cell
+
+00:14:18.720 --> 00:14:23.519
+gets either activated or not activated
+
+00:14:20.880 --> 00:14:26.959
+so this output would be like a zero or a
+
+00:14:23.519 --> 00:14:28.639
+one binary format okay so we will see
+
+00:14:26.959 --> 00:14:30.639
+that in a little bit more detail but
+
+00:14:28.639 --> 00:14:33.040
+let's do a quick comparison between
+
+00:14:30.639 --> 00:14:35.040
+biological and artificial neurons just
+
+00:14:33.040 --> 00:14:36.639
+like a biological neuron there are
+
+00:14:35.040 --> 00:14:39.600
+dendrites and then there is a cell
+
+00:14:36.639 --> 00:14:42.880
+nucleus and synapse and an axon
+
+00:14:39.600 --> 00:14:45.920
+we have in the artificial neuron as well
+
+00:14:42.880 --> 00:14:48.160
+these inputs come like the dead right if
+
+00:14:45.920 --> 00:14:50.320
+you will act like the dendrites there is
+
+00:14:48.160 --> 00:14:52.880
+a like a central unit which performs the
+
+00:14:50.320 --> 00:14:56.160
+summation of these uh weighted inputs
+
+00:14:52.880 --> 00:14:58.880
+which is basically w1 x1 w2 x2 and so on
+
+00:14:56.160 --> 00:15:00.639
+and then our bias is added here and then
+
+00:14:58.880 --> 00:15:02.880
+that passes through what is known as an
+
+00:15:00.639 --> 00:15:04.639
+activation function okay so these are
+
+00:15:02.880 --> 00:15:06.880
+known as the weights w1 w2 and then
+
+00:15:04.639 --> 00:15:09.519
+there is a bias which will come out here
+
+00:15:06.880 --> 00:15:11.600
+and that is added the bias is by the way
+
+00:15:09.519 --> 00:15:14.320
+common for a particular neuron so there
+
+00:15:11.600 --> 00:15:16.800
+won't be like b1 b2 b3 and so on only
+
+00:15:14.320 --> 00:15:19.440
+weights will be one per input the bias
+
+00:15:16.800 --> 00:15:22.639
+is common for the entire neuron it is
+
+00:15:19.440 --> 00:15:25.360
+also common for or the value of the bias
+
+00:15:22.639 --> 00:15:28.000
+remains the same for all the neurons in
+
+00:15:25.360 --> 00:15:29.920
+a particular layer we will also see this
+
+00:15:28.000 --> 00:15:31.600
+as we move forward and we see deep
+
+00:15:29.920 --> 00:15:34.160
+neural network where there are multiple
+
+00:15:31.600 --> 00:15:37.920
+neurons so that's the output now the
+
+00:15:34.160 --> 00:15:41.519
+whole exercise of training the neuron is
+
+00:15:37.920 --> 00:15:43.519
+about changing these weights and biases
+
+00:15:41.519 --> 00:15:46.000
+as i mentioned artificial neural network
+
+00:15:43.519 --> 00:15:48.560
+will consist of several such neurons and
+
+00:15:46.000 --> 00:15:50.880
+as a part of the training process these
+
+00:15:48.560 --> 00:15:53.120
+weights keep changing initially they are
+
+00:15:50.880 --> 00:15:55.360
+assigned some random values through the
+
+00:15:53.120 --> 00:15:57.279
+training process the weights the whole
+
+00:15:55.360 --> 00:16:00.880
+process of training is to come up with
+
+00:15:57.279 --> 00:16:02.959
+the optimum values of w1 w2 and wn and
+
+00:16:00.880 --> 00:16:05.519
+then the b4 or the bias for this
+
+00:16:02.959 --> 00:16:08.399
+particular neuron such that it gives an
+
+00:16:05.519 --> 00:16:11.040
+accurate output as required so let's see
+
+00:16:08.399 --> 00:16:13.440
+what exactly that means so the training
+
+00:16:11.040 --> 00:16:16.720
+process this is how it happens it takes
+
+00:16:13.440 --> 00:16:19.040
+the inputs each input is multiplied by a
+
+00:16:16.720 --> 00:16:20.639
+weight and these weights during training
+
+00:16:19.040 --> 00:16:23.440
+keep changing so initially they are
+
+00:16:20.639 --> 00:16:25.519
+assigned some random values and based on
+
+00:16:23.440 --> 00:16:27.519
+the output whether it is correct or
+
+00:16:25.519 --> 00:16:29.759
+wrong there is a feedback coming back
+
+00:16:27.519 --> 00:16:33.120
+and that will basically change these
+
+00:16:29.759 --> 00:16:36.320
+weights until it starts giving the right
+
+00:16:33.120 --> 00:16:39.199
+output that is represented in here as
+
+00:16:36.320 --> 00:16:42.320
+sigma i going from 1 to n if there are n
+
+00:16:39.199 --> 00:16:46.160
+inputs wi into x i so this is the
+
+00:16:42.320 --> 00:16:49.920
+product of w1 x1 w2 x2 and so on right
+
+00:16:46.160 --> 00:16:52.959
+and there is a bias that gets added here
+
+00:16:49.920 --> 00:16:55.360
+and that entire thing goes to what is
+
+00:16:52.959 --> 00:16:59.120
+known as an activation function so
+
+00:16:55.360 --> 00:17:02.160
+essentially this is sigma of w i x i
+
+00:16:59.120 --> 00:17:05.360
+plus a value of bias which is a b so
+
+00:17:02.160 --> 00:17:07.919
+that entire thing goes as an input to an
+
+00:17:05.360 --> 00:17:10.480
+activation function now this activation
+
+00:17:07.919 --> 00:17:13.520
+function takes this as an input gives
+
+00:17:10.480 --> 00:17:15.439
+the output as a binary output it could
+
+00:17:13.520 --> 00:17:17.439
+be a zero or a one there are of course
+
+00:17:15.439 --> 00:17:18.959
+to start with let's assume it's a binary
+
+00:17:17.439 --> 00:17:20.799
+output later we will see that there are
+
+00:17:18.959 --> 00:17:23.120
+different types of activation functions
+
+00:17:20.799 --> 00:17:25.439
+so it need not always be binary output
+
+00:17:23.120 --> 00:17:28.160
+but to start with let's keep simple so
+
+00:17:25.439 --> 00:17:30.799
+it decides whether the neuron should be
+
+00:17:28.160 --> 00:17:33.280
+fired or not so that is the output like
+
+00:17:30.799 --> 00:17:35.280
+a binary output 0 or 1. all right so
+
+00:17:33.280 --> 00:17:36.960
+again let me summarize this so it takes
+
+00:17:35.280 --> 00:17:39.280
+the inputs so if you're processing an
+
+00:17:36.960 --> 00:17:42.559
+image for example the inputs are the
+
+00:17:39.280 --> 00:17:44.559
+pixel values of the image x1 x2 up to xn
+
+00:17:42.559 --> 00:17:46.480
+there could be hundreds of these so all
+
+00:17:44.559 --> 00:17:48.559
+of those are fed as so these are some
+
+00:17:46.480 --> 00:17:51.200
+values and these pixel values again can
+
+00:17:48.559 --> 00:17:54.400
+be from 0 to 56 each of those pixel
+
+00:17:51.200 --> 00:17:56.160
+values are then multiplied with what is
+
+00:17:54.400 --> 00:17:58.160
+known as a weight this is a numeric
+
+00:17:56.160 --> 00:18:01.360
+value can be any value so this is a
+
+00:17:58.160 --> 00:18:03.679
+number w1 similarly w2 is a number so
+
+00:18:01.360 --> 00:18:05.600
+initially some random values will be
+
+00:18:03.679 --> 00:18:07.520
+assigned and each of these weights are
+
+00:18:05.600 --> 00:18:09.919
+multiplied with the input value and
+
+00:18:07.520 --> 00:18:12.320
+their sum this is known as the weighted
+
+00:18:09.919 --> 00:18:14.960
+sum so that is performed in this kind of
+
+00:18:12.320 --> 00:18:17.440
+the central unit and then a bias is
+
+00:18:14.960 --> 00:18:20.080
+added remember the bias is common for
+
+00:18:17.440 --> 00:18:21.760
+each neuron so this is not the bias
+
+00:18:20.080 --> 00:18:24.559
+value is not one
+
+00:18:21.760 --> 00:18:26.640
+bias value for per input so just keep
+
+00:18:24.559 --> 00:18:28.640
+that in mind the bias value there is one
+
+00:18:26.640 --> 00:18:31.360
+bias per neuron so it is like this
+
+00:18:28.640 --> 00:18:33.200
+summation plus bias is the output from
+
+00:18:31.360 --> 00:18:34.880
+the section this is not the complete
+
+00:18:33.200 --> 00:18:37.600
+output of the neuron but this is the
+
+00:18:34.880 --> 00:18:39.200
+bias for output for step one that goes
+
+00:18:37.600 --> 00:18:41.520
+as an input to what is known as
+
+00:18:39.200 --> 00:18:44.320
+activation function and that activation
+
+00:18:41.520 --> 00:18:46.720
+function results in an output usually a
+
+00:18:44.320 --> 00:18:49.440
+binary output like a zero or a one which
+
+00:18:46.720 --> 00:18:51.919
+is known as the firing of the neuron
+
+00:18:49.440 --> 00:18:53.840
+okay good so we talked about activation
+
+00:18:51.919 --> 00:18:55.760
+function so what is an activation
+
+00:18:53.840 --> 00:18:58.880
+function an activation function
+
+00:18:55.760 --> 00:19:02.640
+basically takes the weighted sum which
+
+00:18:58.880 --> 00:19:05.520
+is we saw w1 x1 w2 x2 the sum of all
+
+00:19:02.640 --> 00:19:08.799
+that plus the bias so it takes that as
+
+00:19:05.520 --> 00:19:10.640
+an input and it generates a certain
+
+00:19:08.799 --> 00:19:12.640
+output now there are different types of
+
+00:19:10.640 --> 00:19:14.160
+activation functions and the output is
+
+00:19:12.640 --> 00:19:16.720
+different for different types of
+
+00:19:14.160 --> 00:19:18.720
+activation functions moreover why is an
+
+00:19:16.720 --> 00:19:20.960
+activation function required it is
+
+00:19:18.720 --> 00:19:23.520
+basically required to bring in
+
+00:19:20.960 --> 00:19:25.760
+non-linearity that's the main reason why
+
+00:19:23.520 --> 00:19:26.880
+an activation function is required so
+
+00:19:25.760 --> 00:19:28.720
+what are the different types of
+
+00:19:26.880 --> 00:19:30.720
+activation functions there are several
+
+00:19:28.720 --> 00:19:32.720
+types of activation functions but these
+
+00:19:30.720 --> 00:19:35.200
+are the most common ones these are the
+
+00:19:32.720 --> 00:19:37.600
+ones that are currently in use sigmoid
+
+00:19:35.200 --> 00:19:41.440
+function was one of the early activation
+
+00:19:37.600 --> 00:19:44.400
+functions but today relu has kind of
+
+00:19:41.440 --> 00:19:46.960
+taken over so relu is by far the most
+
+00:19:44.400 --> 00:19:49.600
+popular activation function that is used
+
+00:19:46.960 --> 00:19:52.320
+today but still sigmoid function is
+
+00:19:49.600 --> 00:19:54.160
+still used in many situations these
+
+00:19:52.320 --> 00:19:56.400
+different types of activation functions
+
+00:19:54.160 --> 00:19:58.080
+are used in different situations based
+
+00:19:56.400 --> 00:20:00.000
+on the kind of problem we are trying to
+
+00:19:58.080 --> 00:20:01.840
+solve so what exactly is the difference
+
+00:20:00.000 --> 00:20:03.919
+between these two sigmoid gives the
+
+00:20:01.840 --> 00:20:06.799
+values of the output will be between 0
+
+00:20:03.919 --> 00:20:07.760
+and 1. threshold function is the value
+
+00:20:06.799 --> 00:20:10.240
+will be
+
+00:20:07.760 --> 00:20:12.400
+0 up to a certain value and beyond that
+
+00:20:10.240 --> 00:20:14.960
+this is also known as a step function
+
+00:20:12.400 --> 00:20:17.600
+and beyond that it will be 1. in case of
+
+00:20:14.960 --> 00:20:19.520
+sigmoid there is a gradual increase but
+
+00:20:17.600 --> 00:20:22.000
+in case of threshold it's like also
+
+00:20:19.520 --> 00:20:24.400
+known as a step function there's a rapid
+
+00:20:22.000 --> 00:20:26.080
+or instantaneous change from zero to one
+
+00:20:24.400 --> 00:20:28.400
+whereas in sigmoid we will see in the
+
+00:20:26.080 --> 00:20:30.640
+next slide there is a gradual increase
+
+00:20:28.400 --> 00:20:33.200
+but the value in this case is between
+
+00:20:30.640 --> 00:20:35.600
+zero and one as well now relu function
+
+00:20:33.200 --> 00:20:38.880
+on the other hand it is equal to
+
+00:20:35.600 --> 00:20:42.960
+basically if the input is 0 or less than
+
+00:20:38.880 --> 00:20:46.000
+0 then the output is 0 whereas if the
+
+00:20:42.960 --> 00:20:48.000
+input is greater than 0 then the output
+
+00:20:46.000 --> 00:20:49.919
+is equal to the input i know it's a
+
+00:20:48.000 --> 00:20:52.400
+little confusing but in the next slides
+
+00:20:49.919 --> 00:20:54.720
+where we show the relu function it will
+
+00:20:52.400 --> 00:20:57.679
+become clear similarly hyperbolic
+
+00:20:54.720 --> 00:21:00.159
+tangent this is similar to sigmoid in
+
+00:20:57.679 --> 00:21:03.360
+terms of the shape of the function
+
+00:21:00.159 --> 00:21:06.400
+however while sigmoid goes from 0 to 1
+
+00:21:03.360 --> 00:21:09.520
+hyperbolic tangent goes from -1 to 1 and
+
+00:21:06.400 --> 00:21:13.760
+here again the increase or the change
+
+00:21:09.520 --> 00:21:15.760
+from -1 to 1 is gradual and not like
+
+00:21:13.760 --> 00:21:18.080
+threshold or step function where it
+
+00:21:15.760 --> 00:21:20.159
+happens instantaneously so let's take a
+
+00:21:18.080 --> 00:21:21.919
+little detailed look at some of these
+
+00:21:20.159 --> 00:21:23.919
+functions so let's start with the
+
+00:21:21.919 --> 00:21:26.559
+sigmoid function so this is the equation
+
+00:21:23.919 --> 00:21:29.679
+of a sigmoid function which is 1 by 1
+
+00:21:26.559 --> 00:21:32.799
+plus e to the power of minus x so x is
+
+00:21:29.679 --> 00:21:36.880
+the value that is the input it goes from
+
+00:21:32.799 --> 00:21:40.000
+0 to -1 so this is sigmoid function the
+
+00:21:36.880 --> 00:21:42.640
+equation is phi x is equal to 1 by 1
+
+00:21:40.000 --> 00:21:44.400
+plus e to the power of minus x and as
+
+00:21:42.640 --> 00:21:47.520
+you can see here this is the input on
+
+00:21:44.400 --> 00:21:49.600
+the x-axis as x is where the value is
+
+00:21:47.520 --> 00:21:51.440
+coming from in fact it can also go
+
+00:21:49.600 --> 00:21:53.200
+negative this is negative actually so
+
+00:21:51.440 --> 00:21:55.520
+this is the zero so this is the negative
+
+00:21:53.200 --> 00:21:58.720
+value of x so as x is coming from
+
+00:21:55.520 --> 00:22:02.080
+negative value towards zero the value of
+
+00:21:58.720 --> 00:22:05.120
+the output slowly as it is approaching
+
+00:22:02.080 --> 00:22:08.320
+zero it it slowly and very gently
+
+00:22:05.120 --> 00:22:11.600
+increases and actually at the point let
+
+00:22:08.320 --> 00:22:15.919
+me just use a pen at the point here it
+
+00:22:11.600 --> 00:22:19.039
+is it is 0.5 it is actually 0.5 okay and
+
+00:22:15.919 --> 00:22:21.440
+slowly gradually it increases to 1 as
+
+00:22:19.039 --> 00:22:24.400
+the value of x increases but then as the
+
+00:22:21.440 --> 00:22:27.360
+value of x increases it tapers off it
+
+00:22:24.400 --> 00:22:29.840
+doesn't go beyond one so that is the
+
+00:22:27.360 --> 00:22:32.320
+speciality of sigmoid function so the
+
+00:22:29.840 --> 00:22:34.960
+output value will remain between zero
+
+00:22:32.320 --> 00:22:37.360
+and one it will never go below zero or
+
+00:22:34.960 --> 00:22:39.679
+above one okay then so that is sigmoid
+
+00:22:37.360 --> 00:22:42.000
+function now this is threshold function
+
+00:22:39.679 --> 00:22:44.880
+or this is also referred to as a step
+
+00:22:42.000 --> 00:22:46.640
+function and here we can also set the
+
+00:22:44.880 --> 00:22:48.240
+threshold in this case it is that's why
+
+00:22:46.640 --> 00:22:50.720
+it's called the threshold function
+
+00:22:48.240 --> 00:22:52.559
+normally it is 0 but you can also set a
+
+00:22:50.720 --> 00:22:54.240
+different value for the threshold now
+
+00:22:52.559 --> 00:22:57.120
+the difference between this and the
+
+00:22:54.240 --> 00:22:59.840
+sigmoid is that here the change is rapid
+
+00:22:57.120 --> 00:23:02.799
+or instantaneous as the x value comes
+
+00:22:59.840 --> 00:23:06.240
+from negative up to zero it remains zero
+
+00:23:02.799 --> 00:23:08.640
+and at zero it pretty much immediately
+
+00:23:06.240 --> 00:23:11.280
+increases to 1 okay so this is a
+
+00:23:08.640 --> 00:23:13.919
+mathematical representation of threshold
+
+00:23:11.280 --> 00:23:16.799
+function phi x is equal to 1 if x is
+
+00:23:13.919 --> 00:23:18.799
+greater than equal to 0 and 0 if x is
+
+00:23:16.799 --> 00:23:20.640
+less than 0. so for all negative values
+
+00:23:18.799 --> 00:23:23.120
+it is 0 which since we have set the
+
+00:23:20.640 --> 00:23:25.679
+threshold to be 0 so as soon as it
+
+00:23:23.120 --> 00:23:28.640
+reaches 0 it becomes 1. you see the
+
+00:23:25.679 --> 00:23:31.520
+difference between this and the previous
+
+00:23:28.640 --> 00:23:34.720
+one which is basically the sigmoid where
+
+00:23:31.520 --> 00:23:37.120
+the increase from 0 to 1 is gradual and
+
+00:23:34.720 --> 00:23:39.200
+here it is instantaneous and that's why
+
+00:23:37.120 --> 00:23:41.440
+this is also known as a step function
+
+00:23:39.200 --> 00:23:43.679
+threshold function or step function this
+
+00:23:41.440 --> 00:23:46.159
+is a relu a relu is one of the most
+
+00:23:43.679 --> 00:23:48.799
+popular activation functions today this
+
+00:23:46.159 --> 00:23:51.679
+is the definition of relu phi x is equal
+
+00:23:48.799 --> 00:23:54.400
+to max of x comma zero what it says is
+
+00:23:51.679 --> 00:23:55.679
+if the value of x is less than zero then
+
+00:23:54.400 --> 00:23:58.880
+phi x is
+
+00:23:55.679 --> 00:24:03.600
+zero the moment it increases goes beyond
+
+00:23:58.880 --> 00:24:06.720
+zero the value of phi x is equal to x so
+
+00:24:03.600 --> 00:24:08.799
+it doesn't stop at one actually it goes
+
+00:24:06.720 --> 00:24:10.720
+all the way so as the value of x
+
+00:24:08.799 --> 00:24:13.440
+increases the value of y will also
+
+00:24:10.720 --> 00:24:17.760
+increase infinitely so there is no limit
+
+00:24:13.440 --> 00:24:19.760
+here unlike your sigmoid or threshold or
+
+00:24:17.760 --> 00:24:22.559
+the next one which is basically
+
+00:24:19.760 --> 00:24:25.200
+hyperbolic tangent okay so in case of
+
+00:24:22.559 --> 00:24:28.080
+relu remember there is no upper limit
+
+00:24:25.200 --> 00:24:31.039
+the output is equal to either 0 in case
+
+00:24:28.080 --> 00:24:34.240
+the value of x is negative or it is
+
+00:24:31.039 --> 00:24:37.039
+equal to the value of x so for example
+
+00:24:34.240 --> 00:24:39.840
+here if the value of x is 10 then the
+
+00:24:37.039 --> 00:24:42.960
+value of y is also 10 right okay so that
+
+00:24:39.840 --> 00:24:45.679
+is relu and there are several advantages
+
+00:24:42.960 --> 00:24:48.159
+of relu and it is much more efficient
+
+00:24:45.679 --> 00:24:49.840
+and provides much more accuracy compared
+
+00:24:48.159 --> 00:24:51.679
+to other activation functions like
+
+00:24:49.840 --> 00:24:54.320
+sigmoid and so on so that's the reason
+
+00:24:51.679 --> 00:24:56.640
+it is very popular all right so this is
+
+00:24:54.320 --> 00:24:58.640
+hyperbolic tangent activation function
+
+00:24:56.640 --> 00:25:01.279
+the function looks similar to sigmoid
+
+00:24:58.640 --> 00:25:03.360
+function the curve if you see the shape
+
+00:25:01.279 --> 00:25:05.279
+it looks similar to sigmoid function but
+
+00:25:03.360 --> 00:25:08.080
+the difference between hyperbolic
+
+00:25:05.279 --> 00:25:10.799
+tangent and sigmoid function is that in
+
+00:25:08.080 --> 00:25:13.200
+case of sigmoid the output goes from
+
+00:25:10.799 --> 00:25:16.960
+zero to one whereas in case of
+
+00:25:13.200 --> 00:25:18.559
+hyperbolic tangent it goes from -1 to 1
+
+00:25:16.960 --> 00:25:21.360
+so that is the difference between
+
+00:25:18.559 --> 00:25:23.840
+hyperbolic tangent and sigmoid function
+
+00:25:21.360 --> 00:25:26.799
+otherwise the shape looks very similar
+
+00:25:23.840 --> 00:25:29.279
+there is a gradual increase unlike the
+
+00:25:26.799 --> 00:25:31.840
+step function where there was an instant
+
+00:25:29.279 --> 00:25:34.159
+increase or instant change here again
+
+00:25:31.840 --> 00:25:37.679
+very similar to sigmoid function the
+
+00:25:34.159 --> 00:25:40.080
+value changes gradually from -1 to 1. so
+
+00:25:37.679 --> 00:25:42.720
+this is the equation of hyperbolic
+
+00:25:40.080 --> 00:25:44.799
+tangent activation function yeah so then
+
+00:25:42.720 --> 00:25:47.200
+let's move on this is a diagrammatic
+
+00:25:44.799 --> 00:25:50.880
+representation of the activation
+
+00:25:47.200 --> 00:25:53.440
+function and how the overall data how
+
+00:25:50.880 --> 00:25:55.840
+the overall progression happens from
+
+00:25:53.440 --> 00:25:57.679
+input to the output so we get the input
+
+00:25:55.840 --> 00:25:59.919
+from the input layer by the way the
+
+00:25:57.679 --> 00:26:01.440
+neural network has three layers
+
+00:25:59.919 --> 00:26:03.120
+typically there will be three layers
+
+00:26:01.440 --> 00:26:04.880
+there is an input layer there is an
+
+00:26:03.120 --> 00:26:07.600
+output layer and then you have the
+
+00:26:04.880 --> 00:26:10.240
+hidden layer so the inputs come from the
+
+00:26:07.600 --> 00:26:12.240
+input layer and they get processed in
+
+00:26:10.240 --> 00:26:14.400
+the hidden layer and then you get the
+
+00:26:12.240 --> 00:26:16.960
+output in the output layer so let's take
+
+00:26:14.400 --> 00:26:19.840
+a little bit of a detailed look into the
+
+00:26:16.960 --> 00:26:22.880
+working of a neural network so let's say
+
+00:26:19.840 --> 00:26:25.679
+we want to classify some images between
+
+00:26:22.880 --> 00:26:28.400
+dogs and cats how do we do this this is
+
+00:26:25.679 --> 00:26:30.159
+known as a classification process and we
+
+00:26:28.400 --> 00:26:31.600
+are trying to use neural networks and
+
+00:26:30.159 --> 00:26:33.520
+deep learning to implement this
+
+00:26:31.600 --> 00:26:37.440
+classification so how do we do that so
+
+00:26:33.520 --> 00:26:40.159
+this is how it works so you have four
+
+00:26:37.440 --> 00:26:42.559
+layer neural network there is an input
+
+00:26:40.159 --> 00:26:45.440
+layer there is an output layer and then
+
+00:26:42.559 --> 00:26:49.440
+there are two hidden layers and what we
+
+00:26:45.440 --> 00:26:52.080
+do is we provide labeled training data
+
+00:26:49.440 --> 00:26:54.640
+which means these images are fed to the
+
+00:26:52.080 --> 00:26:57.120
+network with the label saying that okay
+
+00:26:54.640 --> 00:27:00.159
+this is a cat the neural network is
+
+00:26:57.120 --> 00:27:02.480
+allowed to process it and come up with a
+
+00:27:00.159 --> 00:27:05.039
+prediction saying whether it is a cat or
+
+00:27:02.480 --> 00:27:07.200
+a dog and obviously in the beginning
+
+00:27:05.039 --> 00:27:09.760
+there may be mistakes a cat may be
+
+00:27:07.200 --> 00:27:12.080
+classified as a dog so we then say that
+
+00:27:09.760 --> 00:27:14.000
+okay this is wrong this output is wrong
+
+00:27:12.080 --> 00:27:16.559
+but every time it predicts correctly we
+
+00:27:14.000 --> 00:27:19.120
+say yes this output is correct so that
+
+00:27:16.559 --> 00:27:21.760
+learning process so it will go back make
+
+00:27:19.120 --> 00:27:24.720
+some changes to its weights and biases
+
+00:27:21.760 --> 00:27:26.799
+we again feed these inputs and it will
+
+00:27:24.720 --> 00:27:28.799
+give us the output we will check whether
+
+00:27:26.799 --> 00:27:31.360
+it is correct or not and so on so this
+
+00:27:28.799 --> 00:27:34.320
+is a iterative process which is known as
+
+00:27:31.360 --> 00:27:36.880
+the training process so we are training
+
+00:27:34.320 --> 00:27:39.440
+the neural network and what happens in
+
+00:27:36.880 --> 00:27:41.760
+the training process these weights and
+
+00:27:39.440 --> 00:27:45.600
+biases you remember there were weights
+
+00:27:41.760 --> 00:27:48.880
+like w1 w2 and so on so these weights
+
+00:27:45.600 --> 00:27:51.679
+and biases keep changing every time you
+
+00:27:48.880 --> 00:27:53.760
+feed these which is known as an epoch so
+
+00:27:51.679 --> 00:27:56.159
+there are multiple iterations every
+
+00:27:53.760 --> 00:27:58.960
+iteration is known as an epoch and each
+
+00:27:56.159 --> 00:28:01.279
+time the weights are dated to make sure
+
+00:27:58.960 --> 00:28:03.679
+that the maximum number of images are
+
+00:28:01.279 --> 00:28:06.080
+classified correctly so once again what
+
+00:28:03.679 --> 00:28:09.600
+is the input this input could be like
+
+00:28:06.080 --> 00:28:12.159
+1000 images of cats and dogs and they
+
+00:28:09.600 --> 00:28:14.559
+are labeled because we know which is a
+
+00:28:12.159 --> 00:28:17.039
+cat and which is a dog and we feed those
+
+00:28:14.559 --> 00:28:18.960
+thousand images the neural network will
+
+00:28:17.039 --> 00:28:20.799
+initially assign some weights and biases
+
+00:28:18.960 --> 00:28:23.120
+for each neuron and it will try to
+
+00:28:20.799 --> 00:28:25.120
+process extract the features from the
+
+00:28:23.120 --> 00:28:27.279
+images and it will try to come up with a
+
+00:28:25.120 --> 00:28:29.679
+prediction for each image and that
+
+00:28:27.279 --> 00:28:32.240
+prediction that is calculated by the
+
+00:28:29.679 --> 00:28:34.240
+network is compared with the actual
+
+00:28:32.240 --> 00:28:36.399
+value whether it is a cat or a dog and
+
+00:28:34.240 --> 00:28:38.559
+that's how the error is calculated so
+
+00:28:36.399 --> 00:28:41.279
+let's say there are a thousand images
+
+00:28:38.559 --> 00:28:43.200
+and in the first run only 500 of them
+
+00:28:41.279 --> 00:28:45.440
+have been correctly classified that
+
+00:28:43.200 --> 00:28:47.440
+means we are getting only 50 accuracy so
+
+00:28:45.440 --> 00:28:49.760
+we feed that information back to the
+
+00:28:47.440 --> 00:28:51.919
+network further update these weights and
+
+00:28:49.760 --> 00:28:54.480
+biases for each of the neurons and we
+
+00:28:51.919 --> 00:28:56.320
+run this these inputs once again it will
+
+00:28:54.480 --> 00:28:58.000
+try to calculate extract the features
+
+00:28:56.320 --> 00:28:59.840
+and it will try to predict which of
+
+00:28:58.000 --> 00:29:02.399
+these is cats and dogs and this time
+
+00:28:59.840 --> 00:29:04.480
+let's say out of thousand 700 of them
+
+00:29:02.399 --> 00:29:06.720
+have been predicted correctly so that
+
+00:29:04.480 --> 00:29:09.679
+means in the second iteration the
+
+00:29:06.720 --> 00:29:12.559
+accuracy has increased from 50 to 70
+
+00:29:09.679 --> 00:29:15.039
+percent all right then we go back again
+
+00:29:12.559 --> 00:29:17.760
+we feed this maybe for a third iteration
+
+00:29:15.039 --> 00:29:20.799
+fourth iteration and so on and slowly
+
+00:29:17.760 --> 00:29:23.360
+and steadily the accuracy of this
+
+00:29:20.799 --> 00:29:26.080
+network will keep increasing and it may
+
+00:29:23.360 --> 00:29:28.240
+reach probably you never know 90 95
+
+00:29:26.080 --> 00:29:30.240
+percent and there are several parameters
+
+00:29:28.240 --> 00:29:32.720
+that are known as hyper parameters that
+
+00:29:30.240 --> 00:29:34.880
+need to be changed and tweaked and that
+
+00:29:32.720 --> 00:29:37.760
+is the overall training process and
+
+00:29:34.880 --> 00:29:39.200
+ultimately at some point we say okay you
+
+00:29:37.760 --> 00:29:42.080
+will probably never reach hundred
+
+00:29:39.200 --> 00:29:44.159
+percent accuracy but then we set a limit
+
+00:29:42.080 --> 00:29:46.080
+saying that okay if we receive 95
+
+00:29:44.159 --> 00:29:48.399
+percent accuracy that is good enough for
+
+00:29:46.080 --> 00:29:50.320
+our application and then we say okay our
+
+00:29:48.399 --> 00:29:53.120
+training process is done so that is the
+
+00:29:50.320 --> 00:29:55.760
+way training happens and once the
+
+00:29:53.120 --> 00:29:58.399
+training is done now with the training
+
+00:29:55.760 --> 00:30:01.039
+data set the system has let's say seen
+
+00:29:58.399 --> 00:30:03.760
+all these thousand images therefore what
+
+00:30:01.039 --> 00:30:05.840
+we do is the next step like in any
+
+00:30:03.760 --> 00:30:08.399
+normal machine learning process we do
+
+00:30:05.840 --> 00:30:10.799
+the testing where we take a fresh set of
+
+00:30:08.399 --> 00:30:13.039
+images and we feed it to the network the
+
+00:30:10.799 --> 00:30:14.880
+fresh set which it has not seen before
+
+00:30:13.039 --> 00:30:16.559
+as a part of the training process and
+
+00:30:14.880 --> 00:30:18.159
+this is again nothing new in deep
+
+00:30:16.559 --> 00:30:20.720
+learning this was there in machine
+
+00:30:18.159 --> 00:30:23.440
+learning as well so you feed the test
+
+00:30:20.720 --> 00:30:25.520
+images and then find out whether we are
+
+00:30:23.440 --> 00:30:27.600
+getting a similar accuracy or not so
+
+00:30:25.520 --> 00:30:29.520
+maybe that accuracy may reduce a little
+
+00:30:27.600 --> 00:30:31.840
+bit while training you may get 98
+
+00:30:29.520 --> 00:30:33.760
+percent and then for test you may get 95
+
+00:30:31.840 --> 00:30:36.480
+percent but there shouldn't be a drastic
+
+00:30:33.760 --> 00:30:38.880
+drop like for example you get 98 in
+
+00:30:36.480 --> 00:30:40.799
+training and then you get 50 or 40
+
+00:30:38.880 --> 00:30:43.279
+percent with the test that means your
+
+00:30:40.799 --> 00:30:46.320
+network has not learned you may have to
+
+00:30:43.279 --> 00:30:47.919
+retrain your network so that is the way
+
+00:30:46.320 --> 00:30:50.799
+neural network training works and
+
+00:30:47.919 --> 00:30:53.279
+remember the whole process is about
+
+00:30:50.799 --> 00:30:55.679
+changing these weights and biases and
+
+00:30:53.279 --> 00:30:57.520
+coming up with the optimal values of
+
+00:30:55.679 --> 00:31:00.240
+these weights and biases so that the
+
+00:30:57.520 --> 00:31:02.960
+accuracy is the maximum possible all
+
+00:31:00.240 --> 00:31:04.960
+right so a little bit more detail about
+
+00:31:02.960 --> 00:31:07.520
+how this whole thing works so this is
+
+00:31:04.960 --> 00:31:09.840
+known as forward propagation which is
+
+00:31:07.520 --> 00:31:12.320
+the data or the information is going in
+
+00:31:09.840 --> 00:31:15.279
+the forward direction the inputs are
+
+00:31:12.320 --> 00:31:18.399
+taken weighted summation is done bias is
+
+00:31:15.279 --> 00:31:21.039
+added here and then that is fed to the
+
+00:31:18.399 --> 00:31:23.200
+activation function and then that is
+
+00:31:21.039 --> 00:31:25.360
+that comes out as an output so that is
+
+00:31:23.200 --> 00:31:27.360
+forward propagation and the output is
+
+00:31:25.360 --> 00:31:29.039
+compared with the actual value and that
+
+00:31:27.360 --> 00:31:31.200
+will give us the error the difference
+
+00:31:29.039 --> 00:31:33.679
+between them is the error and in
+
+00:31:31.200 --> 00:31:36.720
+technical terms that is also known as
+
+00:31:33.679 --> 00:31:38.880
+our cost function and this is what we
+
+00:31:36.720 --> 00:31:40.559
+would like to minimize there are
+
+00:31:38.880 --> 00:31:44.000
+different ways of defining the cost
+
+00:31:40.559 --> 00:31:47.200
+function but one of the simplest ways is
+
+00:31:44.000 --> 00:31:49.120
+mean square error so it is nothing but
+
+00:31:47.200 --> 00:31:51.919
+the square of the difference of the
+
+00:31:49.120 --> 00:31:53.679
+errors or the sum of the squares of the
+
+00:31:51.919 --> 00:31:56.240
+difference of the errors and this is
+
+00:31:53.679 --> 00:31:57.760
+also nothing new we have probably if
+
+00:31:56.240 --> 00:31:59.760
+you're familiar with machine learning
+
+00:31:57.760 --> 00:32:02.159
+you must have come across this mean
+
+00:31:59.760 --> 00:32:04.320
+square now there are different ways of
+
+00:32:02.159 --> 00:32:06.240
+defining cost function it need not
+
+00:32:04.320 --> 00:32:08.720
+always be the mean square error but the
+
+00:32:06.240 --> 00:32:11.760
+most common one is this so you define
+
+00:32:08.720 --> 00:32:15.200
+this cost function and you ask the
+
+00:32:11.760 --> 00:32:17.600
+system to minimize this error so we use
+
+00:32:15.200 --> 00:32:21.039
+what is known as an optimization
+
+00:32:17.600 --> 00:32:23.519
+function to minimize this error and the
+
+00:32:21.039 --> 00:32:25.840
+error itself sent back to the system as
+
+00:32:23.519 --> 00:32:27.600
+feedback and that is known as back
+
+00:32:25.840 --> 00:32:30.080
+propagation and so this is the cost
+
+00:32:27.600 --> 00:32:32.880
+function and how do we optimize the cost
+
+00:32:30.080 --> 00:32:35.919
+function we use what is known as
+
+00:32:32.880 --> 00:32:39.519
+gradient descent so the gradient descent
+
+00:32:35.919 --> 00:32:42.480
+mechanism identifies how to change the
+
+00:32:39.519 --> 00:32:45.760
+weights and biases so that the cost
+
+00:32:42.480 --> 00:32:47.919
+function is minimized and there is also
+
+00:32:45.760 --> 00:32:50.159
+what is known as the rate or the
+
+00:32:47.919 --> 00:32:53.120
+learning rate that is what is shown here
+
+00:32:50.159 --> 00:32:55.919
+as slower and faster so you need to
+
+00:32:53.120 --> 00:32:59.360
+specify what should be the learning rate
+
+00:32:55.919 --> 00:33:02.480
+now if the learning rate is very small
+
+00:32:59.360 --> 00:33:04.480
+then it will probably take very long to
+
+00:33:02.480 --> 00:33:07.279
+train whereas if the learning rate is
+
+00:33:04.480 --> 00:33:09.840
+very high then it will appear to be
+
+00:33:07.279 --> 00:33:12.159
+faster but then it will probably never
+
+00:33:09.840 --> 00:33:14.480
+what is known as converge now what is
+
+00:33:12.159 --> 00:33:17.760
+convergence now we are talking about a
+
+00:33:14.480 --> 00:33:20.159
+few terms here convergence is like this
+
+00:33:17.760 --> 00:33:24.000
+this is a representation of convergence
+
+00:33:20.159 --> 00:33:26.240
+so the whole idea of gradient descent is
+
+00:33:24.000 --> 00:33:28.640
+to optimize the cost function or
+
+00:33:26.240 --> 00:33:30.880
+minimize the cost function in order to
+
+00:33:28.640 --> 00:33:34.000
+do that we need to represent the cost
+
+00:33:30.880 --> 00:33:36.480
+function as this curve we need to come
+
+00:33:34.000 --> 00:33:38.960
+to this minimum value that is what is
+
+00:33:36.480 --> 00:33:41.840
+known as the minimization of the cost
+
+00:33:38.960 --> 00:33:44.720
+function now what happens if we have the
+
+00:33:41.840 --> 00:33:48.000
+learning rate very small is that it will
+
+00:33:44.720 --> 00:33:51.200
+take very long to come to this point on
+
+00:33:48.000 --> 00:33:53.279
+the other hand if you have large higher
+
+00:33:51.200 --> 00:33:56.159
+learning rate what will happen is
+
+00:33:53.279 --> 00:33:58.559
+instead of stopping here it will cross
+
+00:33:56.159 --> 00:34:01.279
+over because the learning rate is high
+
+00:33:58.559 --> 00:34:03.440
+and then it has to come back so it will
+
+00:34:01.279 --> 00:34:05.440
+result in what is known as like an
+
+00:34:03.440 --> 00:34:07.760
+oscillation so it will never come to
+
+00:34:05.440 --> 00:34:10.639
+this point which is known as convergence
+
+00:34:07.760 --> 00:34:13.040
+instead it will go back and forth so
+
+00:34:10.639 --> 00:34:14.960
+these are known as hyper parameters the
+
+00:34:13.040 --> 00:34:17.520
+learning rate and so on and these have
+
+00:34:14.960 --> 00:34:20.639
+to be those numbers or those values we
+
+00:34:17.520 --> 00:34:23.040
+can determine typically using trial and
+
+00:34:20.639 --> 00:34:25.359
+error out of experience we we try to
+
+00:34:23.040 --> 00:34:28.639
+find out these values so that is the
+
+00:34:25.359 --> 00:34:30.560
+gradient descent mechanism to optimize
+
+00:34:28.639 --> 00:34:34.399
+the cost function and that is what is
+
+00:34:30.560 --> 00:34:36.560
+used to train our neural network this is
+
+00:34:34.399 --> 00:34:38.720
+another representation of how the
+
+00:34:36.560 --> 00:34:41.200
+training process works and here in this
+
+00:34:38.720 --> 00:34:44.320
+example we are trying to classify these
+
+00:34:41.200 --> 00:34:46.960
+images whether they are cats or dogs and
+
+00:34:44.320 --> 00:34:49.599
+as you can see actually each image is
+
+00:34:46.960 --> 00:34:54.000
+fed in each time one image is fed rather
+
+00:34:49.599 --> 00:34:56.960
+and these values of x1 x2 up to xn are
+
+00:34:54.000 --> 00:34:59.280
+the pixel values within this image okay
+
+00:34:56.960 --> 00:35:01.920
+so those values are then taken and for
+
+00:34:59.280 --> 00:35:04.320
+each of those values a weight is
+
+00:35:01.920 --> 00:35:06.079
+multiplied and then it goes to the next
+
+00:35:04.320 --> 00:35:08.480
+layer and then to the next layer and so
+
+00:35:06.079 --> 00:35:10.880
+on ultimately it comes as the output
+
+00:35:08.480 --> 00:35:13.839
+layer and it gives an output as whether
+
+00:35:10.880 --> 00:35:16.720
+it is a dog or a cat remember the output
+
+00:35:13.839 --> 00:35:19.520
+will never be a named output so these
+
+00:35:16.720 --> 00:35:22.400
+would be like a zero or a one and we say
+
+00:35:19.520 --> 00:35:24.400
+okay zero corresponds to dogs and one
+
+00:35:22.400 --> 00:35:26.640
+corresponds to catch so that is the way
+
+00:35:24.400 --> 00:35:28.800
+it typically happens this is a binary
+
+00:35:26.640 --> 00:35:31.280
+classification we have similar
+
+00:35:28.800 --> 00:35:32.960
+situations where there can be multiple
+
+00:35:31.280 --> 00:35:34.960
+classes which means that there will be
+
+00:35:32.960 --> 00:35:38.160
+multiple more neurons in the output
+
+00:35:34.960 --> 00:35:39.920
+layer okay so this is once again a quick
+
+00:35:38.160 --> 00:35:41.839
+representation of how the forward
+
+00:35:39.920 --> 00:35:44.400
+propagation and the backward propagation
+
+00:35:41.839 --> 00:35:46.640
+works so the information is going
+
+00:35:44.400 --> 00:35:49.119
+in this direction which is basically the
+
+00:35:46.640 --> 00:35:50.079
+forward propagation and at the output
+
+00:35:49.119 --> 00:35:53.200
+level
+
+00:35:50.079 --> 00:35:56.480
+we find out what is the cost function
+
+00:35:53.200 --> 00:35:58.560
+the difference is basically sent back as
+
+00:35:56.480 --> 00:36:01.040
+part of the backward propagation and
+
+00:35:58.560 --> 00:36:03.520
+gradient descent then adjust the weights
+
+00:36:01.040 --> 00:36:06.160
+and biases for the next iteration this
+
+00:36:03.520 --> 00:36:09.280
+happens iteratively till the cost
+
+00:36:06.160 --> 00:36:11.680
+function is minimized and that is when
+
+00:36:09.280 --> 00:36:13.760
+we say the whole the network has
+
+00:36:11.680 --> 00:36:16.160
+converged or the training process has
+
+00:36:13.760 --> 00:36:18.880
+converged and there can be situations
+
+00:36:16.160 --> 00:36:21.599
+where convergence may not happen in rare
+
+00:36:18.880 --> 00:36:24.000
+cases but by and large the network will
+
+00:36:21.599 --> 00:36:26.320
+converge and after maybe a few
+
+00:36:24.000 --> 00:36:28.160
+iterations it could be tens of
+
+00:36:26.320 --> 00:36:30.160
+iterations or hundreds of iterations
+
+00:36:28.160 --> 00:36:32.800
+depending on what exactly the number of
+
+00:36:30.160 --> 00:36:35.599
+iterations can vary and then we say okay
+
+00:36:32.800 --> 00:36:38.079
+we are getting a certain accuracy and we
+
+00:36:35.599 --> 00:36:40.800
+say that is our threshold maybe 90
+
+00:36:38.079 --> 00:36:42.880
+accuracy we stop at that and we say that
+
+00:36:40.800 --> 00:36:44.640
+the system is trained the trained model
+
+00:36:42.880 --> 00:36:47.440
+is then deployed for production and so
+
+00:36:44.640 --> 00:36:49.920
+on so that is the way the neural network
+
+00:36:47.440 --> 00:36:53.200
+training happens okay so that is the way
+
+00:36:49.920 --> 00:36:56.079
+classification works in deep learning
+
+00:36:53.200 --> 00:36:59.280
+using neural network and this slide is
+
+00:36:56.079 --> 00:37:01.520
+an animation of this whole process as
+
+00:36:59.280 --> 00:37:04.079
+you can see the forward propagation the
+
+00:37:01.520 --> 00:37:06.160
+data is going forward from the input
+
+00:37:04.079 --> 00:37:07.359
+layer to the output layer and there is
+
+00:37:06.160 --> 00:37:10.000
+an output
+
+00:37:07.359 --> 00:37:12.960
+and the error is calculated the cost
+
+00:37:10.000 --> 00:37:15.359
+function is calculated and that is fed
+
+00:37:12.960 --> 00:37:18.320
+back as a part of backward propagation
+
+00:37:15.359 --> 00:37:20.800
+and that whole process repeats once
+
+00:37:18.320 --> 00:37:23.359
+again okay so remember in neural
+
+00:37:20.800 --> 00:37:27.520
+networks the training process is nothing
+
+00:37:23.359 --> 00:37:29.760
+but the finding the best values of the
+
+00:37:27.520 --> 00:37:32.400
+weights and biases for each and every
+
+00:37:29.760 --> 00:37:34.960
+neuron in the network that's all
+
+00:37:32.400 --> 00:37:37.760
+training of neural network consists of
+
+00:37:34.960 --> 00:37:40.960
+finding the optimal values of the
+
+00:37:37.760 --> 00:37:44.800
+weights and biases so that the accuracy
+
+00:37:40.960 --> 00:37:47.040
+is maximum all right so with that we
+
+00:37:44.800 --> 00:37:51.800
+come to the end of the session we all
+
+00:37:47.040 --> 00:37:51.800
+have a great day thank you very much
+
+00:37:53.839 --> 00:37:57.359
+hi there if you like this video
+
+00:37:55.680 --> 00:38:00.000
+subscribe to the simply learn youtube
+
+00:37:57.359 --> 00:38:02.160
+channel and click here to watch similar
+
+00:38:00.000 --> 00:38:05.480
+videos turn it up and get certified
+
+00:38:02.160 --> 00:38:05.480
+click here
+
+

@@ -1,0 +1,1440 @@
+WEBVTT - Subtitles by: DownloadYoutubeSubtitles.com
+
+00:00:02.590 --> 00:00:12.400
+[Music]
+
+00:00:10.160 --> 00:00:16.200
+introduction of artificial intelligence
+
+00:00:12.400 --> 00:00:16.200
+and machine learning
+
+00:00:16.640 --> 00:00:21.680
+by the end of this lesson you will be
+
+00:00:18.480 --> 00:00:23.519
+able to define artificial intelligence
+
+00:00:21.680 --> 00:00:26.880
+describe the relationship between
+
+00:00:23.519 --> 00:00:29.439
+artificial intelligence and data science
+
+00:00:26.880 --> 00:00:31.119
+define machine learning
+
+00:00:29.439 --> 00:00:33.440
+describe the relationship between
+
+00:00:31.119 --> 00:00:35.760
+machine learning artificial intelligence
+
+00:00:33.440 --> 00:00:37.760
+and data science
+
+00:00:35.760 --> 00:00:38.960
+describe different machine learning
+
+00:00:37.760 --> 00:00:41.200
+approaches
+
+00:00:38.960 --> 00:00:43.360
+identify the applications of machine
+
+00:00:41.200 --> 00:00:45.280
+learning
+
+00:00:43.360 --> 00:00:48.480
+let's understand how the field of
+
+00:00:45.280 --> 00:00:50.640
+artificial intelligence emerged
+
+00:00:48.480 --> 00:00:52.640
+let's first understand the reason behind
+
+00:00:50.640 --> 00:00:54.719
+the emergence of a.i
+
+00:00:52.640 --> 00:00:57.039
+data economy is one of the factors
+
+00:00:54.719 --> 00:00:59.359
+behind the emergence of ai
+
+00:00:57.039 --> 00:01:01.920
+it refers to how much data has grown
+
+00:00:59.359 --> 00:01:04.239
+over the past few years and how much
+
+00:01:01.920 --> 00:01:06.159
+more it can grow in the coming years
+
+00:01:04.239 --> 00:01:08.320
+when you look at this graph you can
+
+00:01:06.159 --> 00:01:10.000
+clearly understand how the volume of
+
+00:01:08.320 --> 00:01:12.720
+data has grown
+
+00:01:10.000 --> 00:01:15.840
+you can see that since 2009 the data
+
+00:01:12.720 --> 00:01:18.000
+volume has increased by 44 times with
+
+00:01:15.840 --> 00:01:20.560
+the help of social websites
+
+00:01:18.000 --> 00:01:23.119
+the explosion of data has given rise to
+
+00:01:20.560 --> 00:01:25.360
+a new economy and there is a constant
+
+00:01:23.119 --> 00:01:29.040
+battle for ownership of data between
+
+00:01:25.360 --> 00:01:31.119
+companies to derive benefits from it
+
+00:01:29.040 --> 00:01:33.680
+now that you know that data has grown at
+
+00:01:31.119 --> 00:01:36.000
+a rapid pace in the past few years and
+
+00:01:33.680 --> 00:01:38.560
+is going to continue to grow
+
+00:01:36.000 --> 00:01:40.960
+let's understand the need for ai
+
+00:01:38.560 --> 00:01:44.000
+as you know the increase in data volume
+
+00:01:40.960 --> 00:01:46.320
+has given rise to big data which helps
+
+00:01:44.000 --> 00:01:49.520
+manage huge amounts of data
+
+00:01:46.320 --> 00:01:52.000
+data science helps analyze that data so
+
+00:01:49.520 --> 00:01:54.640
+the science associated with data is
+
+00:01:52.000 --> 00:01:56.720
+going toward a new paradigm
+
+00:01:54.640 --> 00:01:59.600
+where one can teach machines to learn
+
+00:01:56.720 --> 00:02:01.840
+from data and drive a variety of useful
+
+00:01:59.600 --> 00:02:04.159
+insights giving rise to artificial
+
+00:02:01.840 --> 00:02:06.840
+intelligence
+
+00:02:04.159 --> 00:02:09.360
+now you may ask what is artificial
+
+00:02:06.840 --> 00:02:11.680
+intelligence artificial intelligence
+
+00:02:09.360 --> 00:02:14.640
+refers to the intelligence displayed by
+
+00:02:11.680 --> 00:02:15.840
+machines that simulates human and animal
+
+00:02:14.640 --> 00:02:18.319
+intelligence
+
+00:02:15.840 --> 00:02:20.400
+it involves intelligence agents
+
+00:02:18.319 --> 00:02:23.120
+the autonomous entities that perceive
+
+00:02:20.400 --> 00:02:25.360
+their environment and take actions that
+
+00:02:23.120 --> 00:02:26.800
+maximize their chances of success at a
+
+00:02:25.360 --> 00:02:28.959
+given goal
+
+00:02:26.800 --> 00:02:31.280
+artificial intelligence is a technique
+
+00:02:28.959 --> 00:02:33.840
+that enables computers to mimic human
+
+00:02:31.280 --> 00:02:36.560
+intelligence using logic
+
+00:02:33.840 --> 00:02:38.400
+it is a program that can sense reason
+
+00:02:36.560 --> 00:02:40.319
+and act
+
+00:02:38.400 --> 00:02:43.200
+let's look at some of the areas where
+
+00:02:40.319 --> 00:02:45.680
+artificial intelligence is used
+
+00:02:43.200 --> 00:02:47.519
+artificial intelligence is redefining
+
+00:02:45.680 --> 00:02:50.480
+industries by providing greater
+
+00:02:47.519 --> 00:02:51.760
+personalization to users and automating
+
+00:02:50.480 --> 00:02:54.000
+processes
+
+00:02:51.760 --> 00:02:57.519
+one example of artificial intelligence
+
+00:02:54.000 --> 00:02:59.360
+in practice is self-driving cars
+
+00:02:57.519 --> 00:03:02.400
+self-driving cars are computer
+
+00:02:59.360 --> 00:03:04.640
+controlled cars that drive themselves
+
+00:03:02.400 --> 00:03:06.800
+in these cars human drivers are never
+
+00:03:04.640 --> 00:03:08.480
+required to take control to safely
+
+00:03:06.800 --> 00:03:11.120
+operate the vehicle
+
+00:03:08.480 --> 00:03:13.599
+these cars are also known as autonomous
+
+00:03:11.120 --> 00:03:16.560
+or driverless cars
+
+00:03:13.599 --> 00:03:19.200
+let's see how apple uses ai
+
+00:03:16.560 --> 00:03:20.879
+iphone users can experience the power of
+
+00:03:19.200 --> 00:03:23.040
+siri the voice
+
+00:03:20.879 --> 00:03:24.800
+it simplifies navigating through your
+
+00:03:23.040 --> 00:03:27.440
+iphone as it listens to your voice
+
+00:03:24.800 --> 00:03:29.599
+commands to perform tasks
+
+00:03:27.440 --> 00:03:32.879
+for instance you can ask siri to call
+
+00:03:29.599 --> 00:03:36.080
+your friend or to play music siri is fun
+
+00:03:32.879 --> 00:03:38.480
+and is extremely convenient to use
+
+00:03:36.080 --> 00:03:40.560
+another example is google's alphago
+
+00:03:38.480 --> 00:03:42.480
+which is a computer program that plays
+
+00:03:40.560 --> 00:03:44.879
+the board game go
+
+00:03:42.480 --> 00:03:47.599
+it is the first computer program to
+
+00:03:44.879 --> 00:03:49.840
+defeat a world champion at the ancient
+
+00:03:47.599 --> 00:03:52.560
+chinese game of go
+
+00:03:49.840 --> 00:03:54.640
+amazon echo is another product it's a
+
+00:03:52.560 --> 00:03:57.120
+home control chatbot device that
+
+00:03:54.640 --> 00:03:59.680
+responds to humans according to what
+
+00:03:57.120 --> 00:04:02.080
+they are saying it responds by playing
+
+00:03:59.680 --> 00:04:04.080
+music movies and more
+
+00:04:02.080 --> 00:04:06.239
+if you've got compatible smart home
+
+00:04:04.080 --> 00:04:09.120
+devices you can tell echo to dim the
+
+00:04:06.239 --> 00:04:11.439
+lights or turn appliances on or off you
+
+00:04:09.120 --> 00:04:14.879
+can use ai and chess and here is an
+
+00:04:11.439 --> 00:04:16.959
+example of a concierge robot from ibm
+
+00:04:14.879 --> 00:04:20.079
+called ibm watson
+
+00:04:16.959 --> 00:04:22.320
+the ibm watson ai has typically been in
+
+00:04:20.079 --> 00:04:26.000
+the headlines for composing music
+
+00:04:22.320 --> 00:04:28.320
+playing chess and even cooking food
+
+00:04:26.000 --> 00:04:30.560
+let's move ahead and look at some sci-fi
+
+00:04:28.320 --> 00:04:32.000
+movies with the concept of artificial
+
+00:04:30.560 --> 00:04:34.320
+intelligence
+
+00:04:32.000 --> 00:04:36.800
+the films featuring ai reflect the
+
+00:04:34.320 --> 00:04:39.520
+ever-changing spectrum of our emotions
+
+00:04:36.800 --> 00:04:41.840
+regarding the machines we have created
+
+00:04:39.520 --> 00:04:44.080
+humans are fascinated by the concept of
+
+00:04:41.840 --> 00:04:46.639
+artificial intelligence and this is
+
+00:04:44.080 --> 00:04:48.240
+reflected in the wide range of movies on
+
+00:04:46.639 --> 00:04:50.800
+ai
+
+00:04:48.240 --> 00:04:53.360
+recommendations systems are used by a
+
+00:04:50.800 --> 00:04:56.160
+lot of e-commerce companies let's see
+
+00:04:53.360 --> 00:04:58.560
+how they work
+
+00:04:56.160 --> 00:05:00.800
+amazon collects data from users and
+
+00:04:58.560 --> 00:05:03.759
+recommends the best product according to
+
+00:05:00.800 --> 00:05:05.520
+the user's buying or shopping pattern
+
+00:05:03.759 --> 00:05:08.720
+for example when you search for a
+
+00:05:05.520 --> 00:05:10.400
+specific product in the amazon store and
+
+00:05:08.720 --> 00:05:12.800
+add it to your cart
+
+00:05:10.400 --> 00:05:14.479
+amazon recommends some relevant products
+
+00:05:12.800 --> 00:05:16.160
+based on your past shopping and
+
+00:05:14.479 --> 00:05:18.479
+searching pattern
+
+00:05:16.160 --> 00:05:20.400
+so before you buy the selected product
+
+00:05:18.479 --> 00:05:22.960
+you get recommendations based on your
+
+00:05:20.400 --> 00:05:25.199
+interest and there is a possibility that
+
+00:05:22.960 --> 00:05:28.240
+you may also buy the relevant product
+
+00:05:25.199 --> 00:05:30.000
+with a selected product if not you have
+
+00:05:28.240 --> 00:05:33.280
+the chance to compare the selected
+
+00:05:30.000 --> 00:05:35.360
+product with the recommended products
+
+00:05:33.280 --> 00:05:37.039
+now let's move ahead and understand the
+
+00:05:35.360 --> 00:05:39.840
+relationship between artificial
+
+00:05:37.039 --> 00:05:42.000
+intelligence machine learning and data
+
+00:05:39.840 --> 00:05:43.680
+science
+
+00:05:42.000 --> 00:05:46.560
+even though the terms artificial
+
+00:05:43.680 --> 00:05:49.520
+intelligence ai machine learning and
+
+00:05:46.560 --> 00:05:51.360
+data science fall in the same domain and
+
+00:05:49.520 --> 00:05:54.160
+are connected to each other they have
+
+00:05:51.360 --> 00:05:56.320
+their specific applications and meaning
+
+00:05:54.160 --> 00:05:58.000
+let's try to understand a little about
+
+00:05:56.320 --> 00:06:00.479
+each of these terms
+
+00:05:58.000 --> 00:06:02.800
+artificial intelligence systems mimic or
+
+00:06:00.479 --> 00:06:04.880
+replicate human intelligence
+
+00:06:02.800 --> 00:06:07.440
+machine learning provides systems the
+
+00:06:04.880 --> 00:06:09.440
+ability to automatically learn and
+
+00:06:07.440 --> 00:06:12.000
+improve from the experiences without
+
+00:06:09.440 --> 00:06:14.160
+being explicitly programmed
+
+00:06:12.000 --> 00:06:17.360
+data science is an umbrella term that
+
+00:06:14.160 --> 00:06:20.240
+encompasses data analytics data mining
+
+00:06:17.360 --> 00:06:22.880
+machine learning artificial intelligence
+
+00:06:20.240 --> 00:06:25.120
+and several other related disciplines
+
+00:06:22.880 --> 00:06:26.960
+let's look at the flow diagram and try
+
+00:06:25.120 --> 00:06:27.919
+to understand the relationship between
+
+00:06:26.960 --> 00:06:30.800
+ai
+
+00:06:27.919 --> 00:06:33.680
+machine learning and data science
+
+00:06:30.800 --> 00:06:35.680
+interestingly ml is also an element of
+
+00:06:33.680 --> 00:06:38.160
+artificial intelligence
+
+00:06:35.680 --> 00:06:40.000
+so the first step is data gathering and
+
+00:06:38.160 --> 00:06:42.319
+data transformation
+
+00:06:40.000 --> 00:06:43.520
+this step basically comes under data
+
+00:06:42.319 --> 00:06:45.600
+science
+
+00:06:43.520 --> 00:06:47.759
+data transformation is the process of
+
+00:06:45.600 --> 00:06:50.080
+converting data from one format or
+
+00:06:47.759 --> 00:06:51.199
+structure into another format or
+
+00:06:50.080 --> 00:06:53.199
+structure
+
+00:06:51.199 --> 00:06:55.759
+data transformation is important to
+
+00:06:53.199 --> 00:06:57.759
+activities such as data management and
+
+00:06:55.759 --> 00:06:59.759
+data integration
+
+00:06:57.759 --> 00:07:02.000
+after gathering data we would want to
+
+00:06:59.759 --> 00:07:04.319
+use the data to make predictions and
+
+00:07:02.000 --> 00:07:06.880
+derive insights in order to get
+
+00:07:04.319 --> 00:07:08.639
+predictions out of the data set we use
+
+00:07:06.880 --> 00:07:11.599
+machine learning techniques such as
+
+00:07:08.639 --> 00:07:14.800
+supervised learning or unsupervised
+
+00:07:11.599 --> 00:07:16.639
+learning on an overview level supervised
+
+00:07:14.800 --> 00:07:18.960
+and unsupervised learning are the
+
+00:07:16.639 --> 00:07:21.199
+machine learning techniques used to
+
+00:07:18.960 --> 00:07:22.400
+extract predictions from a given data
+
+00:07:21.199 --> 00:07:24.880
+set
+
+00:07:22.400 --> 00:07:27.199
+now you must be thinking where deep
+
+00:07:24.880 --> 00:07:29.840
+learning comes into the picture
+
+00:07:27.199 --> 00:07:32.800
+deep learning is a subfield of machine
+
+00:07:29.840 --> 00:07:35.680
+learning involved with algorithms
+
+00:07:32.800 --> 00:07:37.199
+it uses artificial neural networks which
+
+00:07:35.680 --> 00:07:39.199
+are modeled on the structure and
+
+00:07:37.199 --> 00:07:40.560
+performance of neurons in the human
+
+00:07:39.199 --> 00:07:42.880
+brain
+
+00:07:40.560 --> 00:07:45.199
+deep learning is most effective when
+
+00:07:42.880 --> 00:07:46.160
+there isn't a clear structure to the
+
+00:07:45.199 --> 00:07:48.160
+data
+
+00:07:46.160 --> 00:07:49.680
+that you can just exploit and build
+
+00:07:48.160 --> 00:07:52.240
+features around
+
+00:07:49.680 --> 00:07:54.240
+now the next step in the flow diagram is
+
+00:07:52.240 --> 00:07:55.199
+to get insights from predictions being
+
+00:07:54.240 --> 00:07:57.680
+made
+
+00:07:55.199 --> 00:08:00.319
+in order to do so you need to use data
+
+00:07:57.680 --> 00:08:02.400
+analysis which actually is the process
+
+00:08:00.319 --> 00:08:04.080
+under data science
+
+00:08:02.400 --> 00:08:06.240
+now when you are done with all of these
+
+00:08:04.080 --> 00:08:07.280
+you must want your data to perform some
+
+00:08:06.240 --> 00:08:10.160
+actions
+
+00:08:07.280 --> 00:08:12.080
+this is where ai comes into the picture
+
+00:08:10.160 --> 00:08:14.479
+artificial intelligence combines
+
+00:08:12.080 --> 00:08:17.039
+predictions and insights to perform
+
+00:08:14.479 --> 00:08:19.680
+actions based on the human decision and
+
+00:08:17.039 --> 00:08:21.759
+automated decision
+
+00:08:19.680 --> 00:08:23.440
+now let's move ahead and understand the
+
+00:08:21.759 --> 00:08:26.240
+relationship between artificial
+
+00:08:23.440 --> 00:08:28.160
+intelligence machine learning and data
+
+00:08:26.240 --> 00:08:30.000
+science
+
+00:08:28.160 --> 00:08:32.080
+let's look at the relationship between
+
+00:08:30.000 --> 00:08:33.200
+artificial intelligence and machine
+
+00:08:32.080 --> 00:08:35.120
+learning
+
+00:08:33.200 --> 00:08:36.959
+artificial intelligence is the
+
+00:08:35.120 --> 00:08:39.039
+engineering of making intelligent
+
+00:08:36.959 --> 00:08:41.279
+machines and programs
+
+00:08:39.039 --> 00:08:44.080
+machine learning provides systems the
+
+00:08:41.279 --> 00:08:46.959
+ability to learn from past experiences
+
+00:08:44.080 --> 00:08:49.360
+without being explicitly programmed
+
+00:08:46.959 --> 00:08:51.839
+machine learning allows machines to gain
+
+00:08:49.360 --> 00:08:54.839
+intelligence thereby enabling artificial
+
+00:08:51.839 --> 00:08:54.839
+intelligence
+
+00:08:54.959 --> 00:08:58.880
+let's now understand the relationship
+
+00:08:56.800 --> 00:09:00.000
+between machine learning and data
+
+00:08:58.880 --> 00:09:02.160
+science
+
+00:09:00.000 --> 00:09:03.600
+data science and machine learning go
+
+00:09:02.160 --> 00:09:06.320
+hand in hand
+
+00:09:03.600 --> 00:09:08.640
+data science helps evaluate data for
+
+00:09:06.320 --> 00:09:10.640
+machine learning algorithms
+
+00:09:08.640 --> 00:09:13.040
+data science covers the whole spectrum
+
+00:09:10.640 --> 00:09:14.880
+of data processing while machine
+
+00:09:13.040 --> 00:09:18.240
+learning has the algorithmic or
+
+00:09:14.880 --> 00:09:18.240
+statistical aspects
+
+00:09:18.640 --> 00:09:23.839
+data science is the use of statistical
+
+00:09:21.040 --> 00:09:26.080
+methods to find patterns in the data
+
+00:09:23.839 --> 00:09:28.720
+statistical machine learning uses the
+
+00:09:26.080 --> 00:09:31.120
+same techniques as data science
+
+00:09:28.720 --> 00:09:34.000
+data science includes various techniques
+
+00:09:31.120 --> 00:09:37.040
+like statistical modeling visualization
+
+00:09:34.000 --> 00:09:39.440
+and pattern recognition machine learning
+
+00:09:37.040 --> 00:09:44.080
+focuses on developing algorithms from
+
+00:09:39.440 --> 00:09:47.680
+the data provided by making predictions
+
+00:09:44.080 --> 00:09:49.920
+so what is machine learning
+
+00:09:47.680 --> 00:09:52.560
+machine learning is the capability of an
+
+00:09:49.920 --> 00:09:55.360
+artificial intelligence system to learn
+
+00:09:52.560 --> 00:09:57.600
+by extracting patterns from data
+
+00:09:55.360 --> 00:09:59.600
+it usually delivers quicker more
+
+00:09:57.600 --> 00:10:02.480
+accurate results to help you spot
+
+00:09:59.600 --> 00:10:04.399
+profitable opportunities or dangerous
+
+00:10:02.480 --> 00:10:06.399
+risks
+
+00:10:04.399 --> 00:10:09.040
+now you must be curious to understand
+
+00:10:06.399 --> 00:10:11.279
+the features of machine learning machine
+
+00:10:09.040 --> 00:10:14.000
+learning uses the data to detect
+
+00:10:11.279 --> 00:10:16.480
+patterns in a data set and adjust
+
+00:10:14.000 --> 00:10:18.720
+program actions accordingly
+
+00:10:16.480 --> 00:10:20.640
+pattern detection can be defined as the
+
+00:10:18.720 --> 00:10:23.200
+classification of data based on
+
+00:10:20.640 --> 00:10:25.360
+knowledge already gained or on
+
+00:10:23.200 --> 00:10:26.800
+statistical information extracted from
+
+00:10:25.360 --> 00:10:28.640
+the patterns
+
+00:10:26.800 --> 00:10:30.480
+it focuses on the development of
+
+00:10:28.640 --> 00:10:32.480
+computer programs that can teach
+
+00:10:30.480 --> 00:10:34.560
+themselves to grow and change
+
+00:10:32.480 --> 00:10:37.279
+when exposed to new data by using a
+
+00:10:34.560 --> 00:10:39.760
+method called reinforcement learning
+
+00:10:37.279 --> 00:10:42.399
+it uses external feedback to teach the
+
+00:10:39.760 --> 00:10:44.880
+system to change its internal workings
+
+00:10:42.399 --> 00:10:46.880
+in order to guess better next time
+
+00:10:44.880 --> 00:10:49.600
+it enables computers to find hidden
+
+00:10:46.880 --> 00:10:52.640
+insights using iterative algorithms
+
+00:10:49.600 --> 00:10:55.120
+without being explicitly programmed
+
+00:10:52.640 --> 00:10:57.519
+machine learning uses algorithms that
+
+00:10:55.120 --> 00:11:00.399
+learn from previous data to help produce
+
+00:10:57.519 --> 00:11:02.640
+reliable and repeatable decisions it
+
+00:11:00.399 --> 00:11:04.560
+automates analytical model building
+
+00:11:02.640 --> 00:11:07.360
+using the statistical and machine
+
+00:11:04.560 --> 00:11:10.240
+learning algorithms that tease patterns
+
+00:11:07.360 --> 00:11:13.200
+and relationships from data and express
+
+00:11:10.240 --> 00:11:15.120
+them as mathematical equations
+
+00:11:13.200 --> 00:11:18.160
+let's understand the different machine
+
+00:11:15.120 --> 00:11:18.160
+learning approaches
+
+00:11:18.880 --> 00:11:23.519
+so what is the actual difference between
+
+00:11:21.519 --> 00:11:26.560
+traditional programming and machine
+
+00:11:23.519 --> 00:11:27.360
+learning in traditional programming data
+
+00:11:26.560 --> 00:11:30.320
+and
+
+00:11:27.360 --> 00:11:32.720
+is provided to the computer it processes
+
+00:11:30.320 --> 00:11:34.560
+them and gives the output however the
+
+00:11:32.720 --> 00:11:37.360
+machine learning approach is very
+
+00:11:34.560 --> 00:11:40.959
+different in machine learning algorithms
+
+00:11:37.360 --> 00:11:43.360
+are applied on the given data and output
+
+00:11:40.959 --> 00:11:46.000
+the result of the applied algorithm and
+
+00:11:43.360 --> 00:11:49.360
+calculations is a learning model that
+
+00:11:46.000 --> 00:11:51.680
+helps machine to learn from the data
+
+00:11:49.360 --> 00:11:54.320
+in traditional programming you code the
+
+00:11:51.680 --> 00:11:56.560
+behavior of the program but in machine
+
+00:11:54.320 --> 00:11:59.120
+learning you leave a lot of that to the
+
+00:11:56.560 --> 00:12:00.560
+machine to learn from data
+
+00:11:59.120 --> 00:12:03.040
+now let's first understand the
+
+00:12:00.560 --> 00:12:05.040
+traditional programming approach
+
+00:12:03.040 --> 00:12:07.680
+traditionally you would hard code the
+
+00:12:05.040 --> 00:12:10.320
+decision rules for a problem at hand
+
+00:12:07.680 --> 00:12:12.240
+evaluate the results of the program and
+
+00:12:10.320 --> 00:12:15.279
+if the results were satisfactory the
+
+00:12:12.240 --> 00:12:17.680
+program would be deployed in production
+
+00:12:15.279 --> 00:12:20.079
+if the results were not as expected one
+
+00:12:17.680 --> 00:12:22.720
+would review the errors change the
+
+00:12:20.079 --> 00:12:25.279
+program and evaluate it again
+
+00:12:22.720 --> 00:12:28.800
+this iterative process continues till
+
+00:12:25.279 --> 00:12:31.200
+one gets the expected result
+
+00:12:28.800 --> 00:12:33.120
+what is the machine learning approach in
+
+00:12:31.200 --> 00:12:35.920
+the new machine learning approach the
+
+00:12:33.120 --> 00:12:38.240
+decision rules are not hard coded the
+
+00:12:35.920 --> 00:12:40.160
+problem is solved by training a model
+
+00:12:38.240 --> 00:12:43.279
+with the training data in order to
+
+00:12:40.160 --> 00:12:45.760
+derive or learn an algorithm that best
+
+00:12:43.279 --> 00:12:48.639
+represents the relationship between the
+
+00:12:45.760 --> 00:12:51.680
+input and the output this trained model
+
+00:12:48.639 --> 00:12:53.839
+is then evaluated against test data if
+
+00:12:51.680 --> 00:12:56.160
+the results were satisfactory the model
+
+00:12:53.839 --> 00:12:58.160
+would be deployed in production and if
+
+00:12:56.160 --> 00:13:01.920
+the results are not satisfactory the
+
+00:12:58.160 --> 00:13:05.360
+training is repeated with some changes
+
+00:13:01.920 --> 00:13:05.360
+machine learning techniques
+
+00:13:05.600 --> 00:13:09.360
+machine learning uses a number of
+
+00:13:07.600 --> 00:13:12.079
+theories and techniques from data
+
+00:13:09.360 --> 00:13:14.839
+science here are some machine learning
+
+00:13:12.079 --> 00:13:18.480
+techniques classification
+
+00:13:14.839 --> 00:13:21.440
+categorization clustering trend analysis
+
+00:13:18.480 --> 00:13:22.959
+anomaly detection visualization and
+
+00:13:21.440 --> 00:13:26.079
+decision making
+
+00:13:22.959 --> 00:13:28.160
+let's look at these techniques
+
+00:13:26.079 --> 00:13:30.160
+classification is a technique in which
+
+00:13:28.160 --> 00:13:33.360
+the computer program learns from the
+
+00:13:30.160 --> 00:13:35.040
+data input given to it and then uses
+
+00:13:33.360 --> 00:13:36.639
+this learning to classify new
+
+00:13:35.040 --> 00:13:38.959
+observations
+
+00:13:36.639 --> 00:13:41.839
+classification is used for predicting
+
+00:13:38.959 --> 00:13:44.000
+discrete responses classification is
+
+00:13:41.839 --> 00:13:48.360
+used when we are training a model to
+
+00:13:44.000 --> 00:13:50.399
+predict qualitative targets
+
+00:13:48.360 --> 00:13:52.959
+categorization is a technique of
+
+00:13:50.399 --> 00:13:55.440
+organizing data into categories for its
+
+00:13:52.959 --> 00:13:57.839
+most effective and efficient use
+
+00:13:55.440 --> 00:14:00.959
+it makes free text searches faster and
+
+00:13:57.839 --> 00:14:03.279
+provides a better user experience
+
+00:14:00.959 --> 00:14:05.120
+clustering is a technique of grouping a
+
+00:14:03.279 --> 00:14:07.199
+set of objects in such a way that
+
+00:14:05.120 --> 00:14:09.600
+objects in the same group are most
+
+00:14:07.199 --> 00:14:10.880
+similar to each other than to those in
+
+00:14:09.600 --> 00:14:13.120
+other groups
+
+00:14:10.880 --> 00:14:14.959
+it is basically a collection of objects
+
+00:14:13.120 --> 00:14:18.000
+on the basis of similarity and
+
+00:14:14.959 --> 00:14:20.320
+dissimilarity between them
+
+00:14:18.000 --> 00:14:22.240
+trend analysis is a technique aimed at
+
+00:14:20.320 --> 00:14:24.639
+projecting both current and future
+
+00:14:22.240 --> 00:14:27.279
+movement of events through the use of
+
+00:14:24.639 --> 00:14:29.440
+time series data analysis
+
+00:14:27.279 --> 00:14:32.399
+it represents variations of low
+
+00:14:29.440 --> 00:14:36.399
+frequency in a time series the high and
+
+00:14:32.399 --> 00:14:38.880
+medium frequency fluctuations being out
+
+00:14:36.399 --> 00:14:41.519
+anomaly detection is a technique to
+
+00:14:38.880 --> 00:14:44.560
+identify cases that are unusual within
+
+00:14:41.519 --> 00:14:46.639
+data that is seemingly homogenous
+
+00:14:44.560 --> 00:14:48.720
+anomaly detection can be a key for
+
+00:14:46.639 --> 00:14:51.360
+solving intrusions by indicating a
+
+00:14:48.720 --> 00:14:55.639
+presence of intended or unintended
+
+00:14:51.360 --> 00:14:58.000
+induced attacks defects faults and so on
+
+00:14:55.639 --> 00:15:01.680
+visualization is a technique to present
+
+00:14:58.000 --> 00:15:03.760
+data in a pictorial or graphical format
+
+00:15:01.680 --> 00:15:06.320
+it enables decision makers to see
+
+00:15:03.760 --> 00:15:08.399
+analytics presented visually
+
+00:15:06.320 --> 00:15:10.880
+when data is shown in the form of
+
+00:15:08.399 --> 00:15:12.480
+pictures it becomes easy for users to
+
+00:15:10.880 --> 00:15:14.639
+understand it
+
+00:15:12.480 --> 00:15:16.560
+decision making is a technique or skill
+
+00:15:14.639 --> 00:15:19.600
+that provides you with the ability to
+
+00:15:16.560 --> 00:15:22.800
+influence managerial decisions with data
+
+00:15:19.600 --> 00:15:24.720
+as evidence for those possibilities
+
+00:15:22.800 --> 00:15:26.800
+now i am sure you have a better
+
+00:15:24.720 --> 00:15:29.120
+understanding of the overview of machine
+
+00:15:26.800 --> 00:15:31.680
+learning so let's look at some real-time
+
+00:15:29.120 --> 00:15:33.839
+applications of machine learning
+
+00:15:31.680 --> 00:15:36.160
+artificial intelligence and machine
+
+00:15:33.839 --> 00:15:38.320
+learning are being increasingly used in
+
+00:15:36.160 --> 00:15:40.399
+various functions such as image
+
+00:15:38.320 --> 00:15:44.079
+processing robotics
+
+00:15:40.399 --> 00:15:46.399
+data mining video games text analysis
+
+00:15:44.079 --> 00:15:48.320
+and healthcare let's look at each of
+
+00:15:46.399 --> 00:15:51.199
+them in more details
+
+00:15:48.320 --> 00:15:53.279
+so what is image processing it is a
+
+00:15:51.199 --> 00:15:55.519
+technique to convert an image into a
+
+00:15:53.279 --> 00:15:58.160
+digital format and perform some
+
+00:15:55.519 --> 00:16:00.560
+operations on it so as to induce an
+
+00:15:58.160 --> 00:16:02.800
+enhanced image or to extract some
+
+00:16:00.560 --> 00:16:04.720
+helpful information from it
+
+00:16:02.800 --> 00:16:06.399
+let's look at some of the examples of
+
+00:16:04.720 --> 00:16:08.880
+image processing
+
+00:16:06.399 --> 00:16:10.959
+facebook does automatic face tagging by
+
+00:16:08.880 --> 00:16:14.000
+recognizing a face from a previous
+
+00:16:10.959 --> 00:16:15.839
+user's tagged photos another example is
+
+00:16:14.000 --> 00:16:19.279
+optional character recognition which
+
+00:16:15.839 --> 00:16:21.040
+scans printed docs to digitize the text
+
+00:16:19.279 --> 00:16:23.360
+self-driving cars are another big
+
+00:16:21.040 --> 00:16:26.079
+example of image processing
+
+00:16:23.360 --> 00:16:27.839
+autopilot is an optional drive system
+
+00:16:26.079 --> 00:16:30.399
+for tesla cars
+
+00:16:27.839 --> 00:16:34.160
+when autopilot is engaged cars can
+
+00:16:30.399 --> 00:16:37.680
+self-steer adjust speed detect nearby
+
+00:16:34.160 --> 00:16:40.079
+obstacles apply the brakes and park
+
+00:16:37.680 --> 00:16:41.040
+now let's see how robotics uses machine
+
+00:16:40.079 --> 00:16:43.120
+learning
+
+00:16:41.040 --> 00:16:44.720
+robots are machines that can be used to
+
+00:16:43.120 --> 00:16:47.199
+do certain jobs
+
+00:16:44.720 --> 00:16:49.199
+some of the examples of robotics are
+
+00:16:47.199 --> 00:16:52.079
+where a humanoid robot can read the
+
+00:16:49.199 --> 00:16:54.079
+emotions of human beings or
+
+00:16:52.079 --> 00:16:57.040
+an industrial robot is used for
+
+00:16:54.079 --> 00:16:58.880
+assembling and manufacturing products
+
+00:16:57.040 --> 00:17:01.360
+so let's look at some real-time
+
+00:16:58.880 --> 00:17:04.880
+applications of machine learning
+
+00:17:01.360 --> 00:17:07.199
+let's see what data mining is it is the
+
+00:17:04.880 --> 00:17:08.160
+method of analyzing hidden patterns in
+
+00:17:07.199 --> 00:17:10.160
+data
+
+00:17:08.160 --> 00:17:11.679
+let's look at some of the applications
+
+00:17:10.160 --> 00:17:13.919
+of data mining
+
+00:17:11.679 --> 00:17:16.000
+it is used for anomaly detection to
+
+00:17:13.919 --> 00:17:18.720
+detect credit card fraud and to
+
+00:17:16.000 --> 00:17:21.839
+determine which transactions vary from
+
+00:17:18.720 --> 00:17:24.160
+usual purchasing patterns
+
+00:17:21.839 --> 00:17:26.799
+it is also used in market basket
+
+00:17:24.160 --> 00:17:30.559
+analysis which is used to detect which
+
+00:17:26.799 --> 00:17:30.559
+items are often bought together
+
+00:17:31.679 --> 00:17:38.720
+it can be used for grouping where it
+
+00:17:33.679 --> 00:17:38.720
+classifies users based on their profiles
+
+00:17:38.799 --> 00:17:43.280
+machine learning is also applied in many
+
+00:17:41.039 --> 00:17:46.799
+video games in order to give predictions
+
+00:17:43.280 --> 00:17:48.640
+based on data in a pokemon go battle
+
+00:17:46.799 --> 00:17:50.480
+there is a lot of data to take into
+
+00:17:48.640 --> 00:17:51.760
+account to correctly predict the winner
+
+00:17:50.480 --> 00:17:53.600
+of a battle
+
+00:17:51.760 --> 00:17:56.000
+and this is where machine learning
+
+00:17:53.600 --> 00:17:58.400
+becomes useful a machine learning
+
+00:17:56.000 --> 00:18:01.280
+classifier will predict the result of
+
+00:17:58.400 --> 00:18:03.520
+the match based on this data
+
+00:18:01.280 --> 00:18:05.440
+let's move on to one of the most popular
+
+00:18:03.520 --> 00:18:07.360
+applications of machine learning which
+
+00:18:05.440 --> 00:18:09.919
+is text analysis
+
+00:18:07.360 --> 00:18:11.840
+it is the automated process of obtaining
+
+00:18:09.919 --> 00:18:14.640
+information from text
+
+00:18:11.840 --> 00:18:17.600
+one example of text analysis is spam
+
+00:18:14.640 --> 00:18:19.039
+filtering which is used to detect spam
+
+00:18:17.600 --> 00:18:21.440
+in emails
+
+00:18:19.039 --> 00:18:24.160
+another example is sentimental analysis
+
+00:18:21.440 --> 00:18:26.400
+which is used for classifying an opinion
+
+00:18:24.160 --> 00:18:28.799
+as positive negative or neutral it
+
+00:18:26.400 --> 00:18:31.360
+detects public sentiment in twitter feed
+
+00:18:28.799 --> 00:18:33.280
+or filters customer complaints
+
+00:18:31.360 --> 00:18:36.320
+it is also used for information
+
+00:18:33.280 --> 00:18:40.880
+extraction such as extracting specific
+
+00:18:36.320 --> 00:18:40.880
+data address keyword or entities
+
+00:18:41.200 --> 00:18:45.520
+there are many applications of machine
+
+00:18:43.280 --> 00:18:48.720
+learning in the healthcare industry
+
+00:18:45.520 --> 00:18:51.600
+identifying disease and diagnosis
+
+00:18:48.720 --> 00:18:54.400
+drug discovery and manufacturing medical
+
+00:18:51.600 --> 00:18:56.320
+imaging diagnosis and so on
+
+00:18:54.400 --> 00:18:58.480
+some of the companies that use machine
+
+00:18:56.320 --> 00:19:01.200
+learning have revolutionized the health
+
+00:18:58.480 --> 00:19:02.160
+care industry are google deep mind
+
+00:19:01.200 --> 00:19:06.320
+health
+
+00:19:02.160 --> 00:19:08.430
+bio beats health fidelity and ginger dot
+
+00:19:06.320 --> 00:19:12.880
+io
+
+00:19:08.430 --> 00:19:14.960
+[Music]
+
+00:19:12.880 --> 00:19:14.960
+you
+
+

@@ -1,0 +1,621 @@
+WEBVTT - Subtitles by: DownloadYoutubeSubtitles.com
+
+00:00:00.240 --> 00:00:03.760
+we know humans learn from their past
+
+00:00:02.320 --> 00:00:05.680
+experiences
+
+00:00:03.760 --> 00:00:07.359
+and machines follow instructions given
+
+00:00:05.680 --> 00:00:09.599
+by humans
+
+00:00:07.359 --> 00:00:11.519
+but what if humans can train the
+
+00:00:09.599 --> 00:00:14.000
+machines to learn from the past data and
+
+00:00:11.519 --> 00:00:15.839
+do what humans can do and much faster
+
+00:00:14.000 --> 00:00:17.760
+well that's called machine learning but
+
+00:00:15.839 --> 00:00:20.000
+it's a lot more than just learning it's
+
+00:00:17.760 --> 00:00:22.400
+also about understanding and reasoning
+
+00:00:20.000 --> 00:00:24.240
+so today we will learn about the basics
+
+00:00:22.400 --> 00:00:26.800
+of machine learning
+
+00:00:24.240 --> 00:00:28.800
+so that's paul he loves listening to new
+
+00:00:26.800 --> 00:00:30.880
+songs
+
+00:00:28.800 --> 00:00:33.120
+he either likes them or dislikes them
+
+00:00:30.880 --> 00:00:34.880
+paul decides this on the basis of the
+
+00:00:33.120 --> 00:00:36.000
+song's tempo
+
+00:00:34.880 --> 00:00:39.040
+genre
+
+00:00:36.000 --> 00:00:41.440
+intensity and the gender of voice for
+
+00:00:39.040 --> 00:00:44.559
+simplicity let's just use tempo and
+
+00:00:41.440 --> 00:00:47.680
+intensity for now so here tempo is on
+
+00:00:44.559 --> 00:00:50.320
+the x axis ranging from relaxed to fast
+
+00:00:47.680 --> 00:00:53.280
+whereas intensity is on the y axis
+
+00:00:50.320 --> 00:00:56.879
+ranging from light to soaring we see
+
+00:00:53.280 --> 00:00:59.840
+that paul likes the song with fast tempo
+
+00:00:56.879 --> 00:01:02.800
+and soaring intensity while he dislikes
+
+00:00:59.840 --> 00:01:05.280
+the song with relaxed tempo and light
+
+00:01:02.800 --> 00:01:07.360
+intensity so now we know paul's choices
+
+00:01:05.280 --> 00:01:10.720
+let's say paul listens to a new song
+
+00:01:07.360 --> 00:01:13.680
+let's name it as song a song a has fast
+
+00:01:10.720 --> 00:01:15.840
+tempo and a soaring intensity so it lies
+
+00:01:13.680 --> 00:01:17.759
+somewhere here looking at the data can
+
+00:01:15.840 --> 00:01:20.560
+you guess whether paul will like the
+
+00:01:17.759 --> 00:01:23.040
+song or not correct so paul likes this
+
+00:01:20.560 --> 00:01:25.119
+song by looking at paul's past choices
+
+00:01:23.040 --> 00:01:28.400
+we were able to classify the unknown
+
+00:01:25.119 --> 00:01:30.880
+song very easily right let's say now
+
+00:01:28.400 --> 00:01:33.439
+paul listens to a new song let's label
+
+00:01:30.880 --> 00:01:36.720
+it as song b so song b
+
+00:01:33.439 --> 00:01:39.439
+lies somewhere here with medium tempo
+
+00:01:36.720 --> 00:01:42.400
+and medium intensity neither relaxed nor
+
+00:01:39.439 --> 00:01:44.479
+fast neither light nor soaring now can
+
+00:01:42.400 --> 00:01:46.560
+you guess whether paul likes it or not
+
+00:01:44.479 --> 00:01:49.200
+not able to guess whether paul will like
+
+00:01:46.560 --> 00:01:52.159
+it or dislike it are the choices unclear
+
+00:01:49.200 --> 00:01:54.640
+correct we could easily classify song a
+
+00:01:52.159 --> 00:01:57.200
+but when the choice became complicated
+
+00:01:54.640 --> 00:01:59.119
+as in the case of song b yes and that's
+
+00:01:57.200 --> 00:02:01.920
+where machine learning comes in let's
+
+00:01:59.119 --> 00:02:04.240
+see how in the same example for song b
+
+00:02:01.920 --> 00:02:06.719
+if we draw a circle around the song b we
+
+00:02:04.240 --> 00:02:09.440
+see that there are four votes for like
+
+00:02:06.719 --> 00:02:11.760
+whereas one would for dislike if we go
+
+00:02:09.440 --> 00:02:13.440
+for the majority votes we can say that
+
+00:02:11.760 --> 00:02:15.120
+paul will definitely like the song
+
+00:02:13.440 --> 00:02:17.120
+that's all this was a basic machine
+
+00:02:15.120 --> 00:02:19.200
+learning algorithm also it's called k
+
+00:02:17.120 --> 00:02:21.599
+nearest neighbors so this is just a
+
+00:02:19.200 --> 00:02:24.319
+small example in one of the many machine
+
+00:02:21.599 --> 00:02:27.440
+learning algorithms quite easy right
+
+00:02:24.319 --> 00:02:29.840
+believe me it is but what happens when
+
+00:02:27.440 --> 00:02:31.760
+the choices become complicated as in the
+
+00:02:29.840 --> 00:02:33.920
+case of song b that's when machine
+
+00:02:31.760 --> 00:02:35.920
+learning comes in it learns the data
+
+00:02:33.920 --> 00:02:38.160
+builds the prediction model and when the
+
+00:02:35.920 --> 00:02:40.640
+new data point comes in it can easily
+
+00:02:38.160 --> 00:02:43.200
+predict for it more the data better the
+
+00:02:40.640 --> 00:02:45.360
+model higher will be the accuracy there
+
+00:02:43.200 --> 00:02:47.599
+are many ways in which the machine
+
+00:02:45.360 --> 00:02:49.599
+learns it could be either supervised
+
+00:02:47.599 --> 00:02:51.280
+learning unsupervised learning or
+
+00:02:49.599 --> 00:02:53.680
+reinforcement learning let's first
+
+00:02:51.280 --> 00:02:55.519
+quickly understand supervised learning
+
+00:02:53.680 --> 00:02:57.280
+suppose your friend gives you one
+
+00:02:55.519 --> 00:03:00.000
+million coins of three different
+
+00:02:57.280 --> 00:03:02.080
+currencies say one rupee one euro and
+
+00:03:00.000 --> 00:03:04.480
+one dirham each coin has different
+
+00:03:02.080 --> 00:03:07.120
+weights for example a coin of one rupee
+
+00:03:04.480 --> 00:03:09.519
+weighs three grams one euro weighs seven
+
+00:03:07.120 --> 00:03:11.440
+grams and one dirham weighs four grams
+
+00:03:09.519 --> 00:03:13.920
+your model will predict the currency of
+
+00:03:11.440 --> 00:03:16.400
+the coin here your weight becomes the
+
+00:03:13.920 --> 00:03:18.400
+feature of coins while currency becomes
+
+00:03:16.400 --> 00:03:21.040
+the label when you feed this data to the
+
+00:03:18.400 --> 00:03:23.680
+machine learning model it learns which
+
+00:03:21.040 --> 00:03:26.319
+feature is associated with which label
+
+00:03:23.680 --> 00:03:28.959
+for example it will learn that if a coin
+
+00:03:26.319 --> 00:03:30.560
+is of 3 grams it will be a 1 rupee coin
+
+00:03:28.959 --> 00:03:32.879
+let's give a new coin to the machine on
+
+00:03:30.560 --> 00:03:34.959
+the basis of the weight of the new coin
+
+00:03:32.879 --> 00:03:37.599
+your model will predict the currency
+
+00:03:34.959 --> 00:03:40.000
+hence supervised learning uses labeled
+
+00:03:37.599 --> 00:03:42.400
+data to train the model here the machine
+
+00:03:40.000 --> 00:03:44.159
+knew the features of the object and also
+
+00:03:42.400 --> 00:03:46.159
+the labels associated with those
+
+00:03:44.159 --> 00:03:47.760
+features on this note let's move to
+
+00:03:46.159 --> 00:03:49.760
+unsupervised learning and see the
+
+00:03:47.760 --> 00:03:51.440
+difference suppose you have cricket data
+
+00:03:49.760 --> 00:03:53.760
+set of various players with their
+
+00:03:51.440 --> 00:03:56.319
+respective scores and wickets taken when
+
+00:03:53.760 --> 00:03:58.640
+you feed this data set to the machine
+
+00:03:56.319 --> 00:04:00.959
+the machine identifies the pattern of
+
+00:03:58.640 --> 00:04:02.319
+player performance so it plots this data
+
+00:04:00.959 --> 00:04:04.799
+with the respective wickets on the
+
+00:04:02.319 --> 00:04:06.799
+x-axis while runs on the y-axis while
+
+00:04:04.799 --> 00:04:08.879
+looking at the data you'll clearly see
+
+00:04:06.799 --> 00:04:10.879
+that there are two clusters the one
+
+00:04:08.879 --> 00:04:13.280
+cluster are the players who scored
+
+00:04:10.879 --> 00:04:15.680
+higher runs and took less wickets while
+
+00:04:13.280 --> 00:04:18.000
+the other cluster is of the players who
+
+00:04:15.680 --> 00:04:20.560
+scored less runs but took many wickets
+
+00:04:18.000 --> 00:04:22.800
+so here we interpret these two clusters
+
+00:04:20.560 --> 00:04:24.800
+as batsmen and bowlers the important
+
+00:04:22.800 --> 00:04:27.520
+point to note here is that there were no
+
+00:04:24.800 --> 00:04:29.759
+labels of batsmen and bowlers hence the
+
+00:04:27.520 --> 00:04:31.360
+learning with unlabeled data is
+
+00:04:29.759 --> 00:04:33.199
+unsupervised learning so we saw
+
+00:04:31.360 --> 00:04:35.199
+supervised learning where the data was
+
+00:04:33.199 --> 00:04:37.520
+labeled and the unsupervised learning
+
+00:04:35.199 --> 00:04:39.360
+where the data was unlabeled and then
+
+00:04:37.520 --> 00:04:41.280
+there is reinforcement learning which is
+
+00:04:39.360 --> 00:04:42.560
+a reward based learning or we can say
+
+00:04:41.280 --> 00:04:44.639
+that it works on the principle of
+
+00:04:42.560 --> 00:04:46.960
+feedback here let's say you provide the
+
+00:04:44.639 --> 00:04:49.919
+system with an image of a dog and ask it
+
+00:04:46.960 --> 00:04:52.080
+to identify it the system identifies it
+
+00:04:49.919 --> 00:04:54.000
+as a cat so you give a negative feedback
+
+00:04:52.080 --> 00:04:55.600
+to the machine saying that it's a dog's
+
+00:04:54.000 --> 00:04:57.759
+image the machine will learn from the
+
+00:04:55.600 --> 00:04:59.919
+feedback and finally if it comes across
+
+00:04:57.759 --> 00:05:01.919
+any other image of a dog it will be able
+
+00:04:59.919 --> 00:05:03.840
+to classify it correctly that is
+
+00:05:01.919 --> 00:05:05.520
+reinforcement learning to generalize
+
+00:05:03.840 --> 00:05:07.680
+machine learning model let's see a
+
+00:05:05.520 --> 00:05:09.280
+flowchart input is given to a machine
+
+00:05:07.680 --> 00:05:10.960
+learning model which then gives the
+
+00:05:09.280 --> 00:05:13.520
+output according to the algorithm
+
+00:05:10.960 --> 00:05:16.000
+applied if it's right we take the output
+
+00:05:13.520 --> 00:05:18.080
+as a final result else we provide
+
+00:05:16.000 --> 00:05:20.639
+feedback to the training model and ask
+
+00:05:18.080 --> 00:05:22.160
+it to predict until it learns i hope
+
+00:05:20.639 --> 00:05:23.919
+you've understood supervised and
+
+00:05:22.160 --> 00:05:26.240
+unsupervised learning so let's have a
+
+00:05:23.919 --> 00:05:28.720
+quick quiz you have to determine whether
+
+00:05:26.240 --> 00:05:30.560
+the given scenarios uses supervised or
+
+00:05:28.720 --> 00:05:32.880
+unsupervised learning simple right
+
+00:05:30.560 --> 00:05:35.039
+scenario one facebook recognizes your
+
+00:05:32.880 --> 00:05:37.520
+friend in a picture from an album of
+
+00:05:35.039 --> 00:05:40.639
+tagged photographs
+
+00:05:37.520 --> 00:05:43.840
+scenario 2 netflix recommends new movies
+
+00:05:40.639 --> 00:05:46.400
+based on someone's past movie choices
+
+00:05:43.840 --> 00:05:48.800
+scenario 3 analyzing bank data for
+
+00:05:46.400 --> 00:05:51.120
+suspicious transactions and flagging the
+
+00:05:48.800 --> 00:05:53.360
+fraud transactions think wisely and
+
+00:05:51.120 --> 00:05:55.440
+comment below your answers moving on
+
+00:05:53.360 --> 00:05:57.680
+don't you sometimes wonder how is
+
+00:05:55.440 --> 00:05:59.280
+machine learning possible in today's era
+
+00:05:57.680 --> 00:06:02.000
+well that's because today we have
+
+00:05:59.280 --> 00:06:04.479
+humongous data available everybody is
+
+00:06:02.000 --> 00:06:06.240
+online either making a transaction or
+
+00:06:04.479 --> 00:06:08.560
+just surfing the internet and that's
+
+00:06:06.240 --> 00:06:10.960
+generating a huge amount of data every
+
+00:06:08.560 --> 00:06:13.440
+minute and that data my friend is the
+
+00:06:10.960 --> 00:06:15.520
+key to analysis also the memory handling
+
+00:06:13.440 --> 00:06:17.360
+capabilities of computers have largely
+
+00:06:15.520 --> 00:06:20.479
+increased which helps them to process
+
+00:06:17.360 --> 00:06:23.280
+such huge amount of data at hand without
+
+00:06:20.479 --> 00:06:25.360
+any delay and yes computers now have
+
+00:06:23.280 --> 00:06:27.280
+great computational powers so there are
+
+00:06:25.360 --> 00:06:29.520
+a lot of applications of machine
+
+00:06:27.280 --> 00:06:31.280
+learning out there to name a few machine
+
+00:06:29.520 --> 00:06:33.440
+learning is used in healthcare where
+
+00:06:31.280 --> 00:06:35.440
+diagnostics are predicted for doctor's
+
+00:06:33.440 --> 00:06:37.759
+review the sentiment analysis that the
+
+00:06:35.440 --> 00:06:39.600
+tech giants are doing on social media is
+
+00:06:37.759 --> 00:06:41.360
+another interesting application of
+
+00:06:39.600 --> 00:06:43.280
+machine learning fraud detection in the
+
+00:06:41.360 --> 00:06:45.520
+finance sector and also to predict
+
+00:06:43.280 --> 00:06:47.120
+customer churn in the e-commerce sector
+
+00:06:45.520 --> 00:06:49.759
+while booking a gap you must have
+
+00:06:47.120 --> 00:06:51.520
+encountered surge pricing often where it
+
+00:06:49.759 --> 00:06:54.240
+says the fair of your trip has been
+
+00:06:51.520 --> 00:06:56.000
+updated continue booking yes please i'm
+
+00:06:54.240 --> 00:06:58.160
+getting late for office
+
+00:06:56.000 --> 00:07:00.240
+well that's an interesting machine
+
+00:06:58.160 --> 00:07:02.639
+learning model which is used by global
+
+00:07:00.240 --> 00:07:04.639
+taxi giant uber and others where they
+
+00:07:02.639 --> 00:07:06.560
+have differential pricing in real time
+
+00:07:04.639 --> 00:07:10.000
+based on demand the number of cars
+
+00:07:06.560 --> 00:07:12.560
+available bad weather rush r etc so they
+
+00:07:10.000 --> 00:07:14.800
+use the surge pricing model to ensure
+
+00:07:12.560 --> 00:07:17.280
+that those who need a cab can get one
+
+00:07:14.800 --> 00:07:19.599
+also it uses predictive modeling to
+
+00:07:17.280 --> 00:07:21.680
+predict where the demand will be high
+
+00:07:19.599 --> 00:07:23.759
+with the goal that drivers can take care
+
+00:07:21.680 --> 00:07:26.319
+of the demand and search pricing can be
+
+00:07:23.759 --> 00:07:29.280
+minimized great hey siri can you remind
+
+00:07:26.319 --> 00:07:30.400
+me to book a cab at 6 pm today ok i'll
+
+00:07:29.280 --> 00:07:33.120
+remind you
+
+00:07:30.400 --> 00:07:35.520
+thanks no problem comment below some
+
+00:07:33.120 --> 00:07:37.360
+interesting everyday examples around you
+
+00:07:35.520 --> 00:07:39.840
+where machines are learning and doing
+
+00:07:37.360 --> 00:07:41.840
+amazing jobs so that's all for machine
+
+00:07:39.840 --> 00:07:43.680
+learning basics today from my site keep
+
+00:07:41.840 --> 00:07:48.199
+watching this space for more interesting
+
+00:07:43.680 --> 00:07:48.199
+videos until then happy learning
+
+

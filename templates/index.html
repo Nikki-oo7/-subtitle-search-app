@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subtitle Search</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 25px;
+        }
+
+        input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        select {
+            padding: 8px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .result:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        mark {
+            background-color: yellow;
+        }
+
+        .link-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 14px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .link-btn:hover {
+            background-color: #218838;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+
+        img {
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Subtitle Keyword Search</h1>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Enter keyword..." required value="{{ query }}">
+        <label for="count">Show:</label>
+        <select name="count" id="count">
+            <option value="5" {% if count == '5' %}selected{% endif %}>5 results</option>
+            <option value="10" {% if count == '10' %}selected{% endif %}>10 results</option>
+            <option value="15" {% if count == '15' %}selected{% endif %}>15 results</option>
+            <option value="20" {% if count == '20' %}selected{% endif %}>20 results</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results %}
+        <h3>Found {{ results|length }} results for "<em>{{ query }}</em>"</h3>
+        {% for r in results %}
+            <div class="result">
+                <h4>{{ r['Video Title Clean'] }}</h4>
+                <img src="{{ r['Thumbnail'] }}" width="320"><br>
+                <strong>⏱️ Time:</strong> {{ r['Readable Time'] }}<br><br>
+                <pre>{{ r['Context Block'] | safe }}</pre>
+                <a class="link-btn" href="{{ r['Jump Link'] }}" target="_blank">▶ Jump to Video</a>
+            </div>
+        {% endfor %}
+    {% elif query %}
+        <p>No results found for "<em>{{ query }}</em>".</p>
+    {% endif %}
+</body>
+</html>
