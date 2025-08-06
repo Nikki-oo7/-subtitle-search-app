@@ -19,10 +19,12 @@
 
         input[type="text"] {
             width: 400px;
-            padding: 10px;
+            padding: 10px 10px 10px 40px; /* padding-left adjusted for icon */
             border-radius: 10px;
             border: 1px solid #ccc;
             font-size: 16px;
+            background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat 10px center;
+            background-size: 20px;
         }
 
         select {
@@ -91,7 +93,7 @@
     </style>
 </head>
 <body>
-    <h1>🎯 Subtitle Keyword Search</h1>
+    <h1> Subtitle Keyword Search</h1>
     <form method="POST">
         <input type="text" name="query" placeholder="Enter keyword..." required value="{{ query }}">
         <label for="count">Show:</label>

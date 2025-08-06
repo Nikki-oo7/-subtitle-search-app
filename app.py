@@ -7,7 +7,7 @@ import re
 
 app = Flask(__name__)
 
-# Load vectorizer and TF-IDF matrix
+# Vectorizer and TF-IDF matrix
 with open('tfidf_vectorizer.pkl', 'rb') as f:
     vectorizer = pickle.load(f)
 
@@ -15,13 +15,6 @@ with open('tfidf_matrix.pkl', 'rb') as f:
     tfidf_matrix = pickle.load(f)
 
 metadata = pd.read_csv('indexed_metadata.csv')
-
-# Map lowercase video titles to their YouTube IDs
-video_id_map = {
-    'machine learning what is machine learning introduction to machine learning 2024 simplilearn': 'ukzFI9rgwfU',
-    'introduction to artificial intelligence what is ai artificial intelligence tutorial simplilearn': 'FbxTVRfQFuI',
-    'what is deep learning introduction to deep learning deep learning tutorial simplilearn': 'SSE4M0gcmvE'
-}
 
 def timestamp_to_seconds(timestamp):
     parts = timestamp.split(':')
@@ -47,15 +40,17 @@ def search_subtitles(query, top_n=5):
 
     for idx in top_indices:
         row = metadata.iloc[idx]
+
+        #  YT ID  from  metadata
+        video_id = row['YouTube ID']
         video_title = row['Video Title'].strip().lower()
-        video_id = video_id_map.get(video_title, '')
         seconds = timestamp_to_seconds(row['Start Time'])
 
-        # Build jump link
+        # jump link
         link = f"https://www.youtube.com/watch?v={video_id}&t={seconds}s" if video_id else ''
         jump_links.append(link)
 
-        # Readable timestamp (e.g. 0:05:21)
+        #  timestamp
         readable_time = row['Start Time']
         timestamps_readable.append(readable_time)
 
@@ -63,7 +58,7 @@ def search_subtitles(query, top_n=5):
         thumbnail = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg" if video_id else ''
         thumbnails.append(thumbnail)
 
-        # Capitalized video title
+        # video title
         video_titles.append(video_title.title())
 
         # Context block
@@ -74,7 +69,6 @@ def search_subtitles(query, top_n=5):
         context = f"{before}\n{highlighted}\n{after}"
         context_blocks.append(context)
 
-    # Add new polished fields
     results['Context Block'] = context_blocks
     results['Jump Link'] = jump_links
     results['Thumbnail'] = thumbnails
