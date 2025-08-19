@@ -1,124 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Subtitle Search</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 40px;
-            background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
-        }
+<meta charset="utf-8">
+<title>Keyword Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    :root{
+        --radius: 10px;
+        --blue: #0b5fff;
+        --blue-hover: #0848c9;
+        --border: #d0d7de;
+        --card-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        --maxw-search: 640px;
+    }
 
-        h1 {
-            color: #333;
-        }
+    body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        background: #fff;
+        color: #222;
+        transition: background-color .2s, color .2s, padding-top 0.4s ease;
+        padding-top: 18vh; 
+    }
+    body.has-results {
+        padding-top: 5vh; 
+    }
 
-        form {
-            margin-bottom: 25px;
-        }
+    h1 {
+        margin-bottom: 18px;
+        text-align: center;
+    }
 
-        input[type="text"] {
-            width: 400px;
-            padding: 10px 10px 10px 40px; /* padding-left adjusted for icon */
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            background: #fff url('https://cdn-icons-png.flaticon.com/512/622/622669.png') no-repeat 10px center;
-            background-size: 20px;
-        }
+    /* SEARCH BAR */
+    .search-wrap {
+        display: flex;
+        gap: 0;
+        align-items: stretch;
+        max-width: 640px;
+        margin: 0 auto 8px auto; 
+        position: relative;
+    }
 
-        select {
-            padding: 8px;
-            margin-left: 10px;
-            font-size: 14px;
-        }
+    input[type="text"] {
+        flex: 1 1 auto;
+        height: 44px;
+        padding: 10px 12px 10px 40px;
+        border-radius: var(--radius) 0 0 var(--radius);
+        border: 1px solid var(--border);
+        font-size: 16px;
+        background:
+          #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%2399a3ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>')
+           no-repeat 12px center / 18px 18px;
+    }
+    input[type="text"]:focus {
+        outline: none;
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(11,95,255,.15);
+    }
 
-        button {
-            padding: 10px 18px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
+    button[type="submit"] {
+        padding: 0 16px;
+        background-color: var(--blue);
+        color: white;
+        border: 1px solid var(--blue);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    button[type="submit"]:hover {
+        background-color: var(--blue-hover);
+        border-color: var(--blue-hover);
+    }
 
-        button:hover {
-            background-color: #0056b3;
-        }
+    /* Version tag */
+    .version-tag {
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .version-tag .num {
+        font-weight: bold;
+        margin-left: 2px;
+    }
+  
+    
+    .results-meta {
+        display: none;
+        justify-content: flex-start;
+        margin: 12px 0;
+        color: #555;
+        font-size: 14px;
+    }
 
-        .result {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .show-more {
+        display: none;
+        margin: 10px auto 24px;  
+        padding: 10px 16px;
+        background: #f3f6ff;
+        border: 1px solid #cfe0ff;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .show-more:hover { background: #e8f0ff; }
 
-        .result:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-        }
+    
+    #resultsWrap { display: block; }
+    .result {
+        background: #fff;
+        padding: 16px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .result:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
 
-        mark {
-            background-color: yellow;
-        }
+    mark { background-color: yellow; }
+    .context { white-space: pre-wrap; font-size: 14px; margin-top: 10px; }
 
-        .link-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 14px;
-            background-color: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    .link-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 14px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    .link-btn:hover { background-color: #218838; }
 
-        .link-btn:hover {
-            background-color: #218838;
-        }
-
-        pre {
-            white-space: pre-wrap;
-            font-size: 14px;
-        }
-
-        img {
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-    </style>
+    /* Dark theme */
+    .theme-toggle {
+        position: fixed; top: 16px; right: 16px;
+        background: #f9f9f9; color: #222;
+        border: 1px solid #00000022;
+        padding: 8px 12px; border-radius: 8px;
+        font-weight: 600; cursor: pointer;
+    }
+    html[data-theme="dark"] body { background: #0e0f12; color: #e7e9ee; }
+    html[data-theme="dark"] .result { background: #15171c; }
+</style>
 </head>
-<body>
-    <h1> Subtitle Keyword Search</h1>
-    <form method="POST">
-        <input type="text" name="query" placeholder="Enter keyword..." required value="{{ query }}">
-        <label for="count">Show:</label>
-        <select name="count" id="count">
-            <option value="5" {% if count == '5' %}selected{% endif %}>5 results</option>
-            <option value="10" {% if count == '10' %}selected{% endif %}>10 results</option>
-            <option value="15" {% if count == '15' %}selected{% endif %}>15 results</option>
-            <option value="20" {% if count == '20' %}selected{% endif %}>20 results</option>
-        </select>
-        <button type="submit">Search</button>
-    </form>
+<body class="{% if results %}has-results{% endif %}">
+<button id="themeToggle" class="theme-toggle" onclick="__toggleTheme()"> Dark</button>
 
-    {% if results %}
-        <h3>Found {{ results|length }} results for "<em>{{ query }}</em>"</h3>
-        {% for r in results %}
-            <div class="result">
-                <h4>{{ r['Video Title Clean'] }}</h4>
-                <img src="{{ r['Thumbnail'] }}" width="320"><br>
-                <strong>⏱️ Time:</strong> {{ r['Readable Time'] }}<br><br>
-                <pre>{{ r['Context Block'] | safe }}</pre>
-                <a class="link-btn" href="{{ r['Jump Link'] }}" target="_blank">▶ Jump to Video</a>
-            </div>
-        {% endfor %}
-    {% elif query %}
-        <p>No results found for "<em>{{ query }}</em>".</p>
-    {% endif %}
+<h1>Keyword Search</h1>
+<form method="POST" class="search-wrap" autocomplete="off">
+    <input type="text" name="query" placeholder="Enter keyword..." required value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+
+{% if not results and not query %}
+<div class="version-tag">Version 1.0</div>
+{% endif %}
+
+<div id="resultsMeta" class="results-meta"><span id="resultsCount"></span></div>
+
+{% if results %}
+<div id="resultsWrap" data-total="{{ total_hits if total_hits is defined else results|length }}">
+    {% set _initial = 10 %}
+    {% for r in results %}
+    <div class="result" data-index="{{ loop.index0 }}" {% if loop.index0 >= _initial %}style="display:none"{% endif %}>
+        <h4>{{ r['Video Title Clean'] }}</h4>
+        <img src="{{ r['Thumbnail'] }}" width="320" alt="Video thumbnail">
+        <br><strong>⏱️ Time:</strong> {{ r['Readable Time'] }}<br><br>
+        <div class="context">{{ r['Context Block'] | safe }}</div>
+        <a class="link-btn" href="{{ r['Jump Link'] }}" target="_blank">▶ Jump to Video</a>
+    </div>
+    {% endfor %}
+</div>
+<button id="showMoreBtn" class="show-more" type="button">Show more</button>
+{% elif query %}
+<p>No results found for "<em>{{ query }}</em>".</p>
+{% endif %}
+
+<script>
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.dataset.theme = saved;
+  function setTheme(t) {
+    document.documentElement.dataset.theme = t;
+    localStorage.setItem('theme', t);
+    document.getElementById('themeToggle').textContent = t === 'dark' ? ' Light' : ' Dark';
+  }
+  window.__toggleTheme = function() {
+    setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('themeToggle').textContent =
+      (document.documentElement.dataset.theme || 'light') === 'dark' ? ' Light' : ' Dark';
+  });
+})();
+
+(function(){
+    const wrap = document.getElementById('resultsWrap');
+    if (!wrap) return;
+    const total = parseInt(wrap.dataset.total || '0', 10);
+    const initial = 10, step = 10;
+    let visible = Math.min(initial, total);
+    const btn = document.getElementById('showMoreBtn');
+    const meta = document.getElementById('resultsMeta');
+    const countEl = document.getElementById('resultsCount');
+    function updateCounter() {
+        meta.style.display = total ? 'block' : 'none';
+        countEl.textContent = `Showing ${visible} of ${total} results`;
+    }
+    function updateButton() {
+        btn.style.display = (visible < total) ? 'block' : 'none';
+    }
+    updateCounter(); updateButton();
+    btn.addEventListener('click', () => {
+        const nextVisible = Math.min(visible + step, total);
+        for (let i = visible; i < nextVisible; i++) {
+            const card = wrap.querySelector(`.result[data-index="${i}"]`);
+            if (card) card.style.display = '';
+        }
+        visible = nextVisible;
+        updateCounter(); updateButton();
+    });
+})();
+</script>
 </body>
 </html>

@@ -1,94 +1,144 @@
 from flask import Flask, render_template, request
-import pandas as pd
-import pickle
+import os, html, pandas as pd, pickle, re
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-import re
 
 app = Flask(__name__)
 
-# Vectorizer and TF-IDF matrix
-with open('tfidf_vectorizer.pkl', 'rb') as f:
+# Health check (for HF Spaces readiness)
+@app.get("/health")
+def health():
+    return {"ok": True}, 200
+
+# Path
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+VECT_PATH = os.path.join(BASE_DIR, 'tfidf_vectorizer.pkl')
+MATR_PATH = os.path.join(BASE_DIR, 'tfidf_matrix.pkl')
+META_PATH = os.path.join(BASE_DIR, 'indexed_metadata.csv')
+
+# Load artifacts
+
+with open(VECT_PATH, 'rb') as f:
     vectorizer = pickle.load(f)
-
-with open('tfidf_matrix.pkl', 'rb') as f:
+with open(MATR_PATH, 'rb') as f:
     tfidf_matrix = pickle.load(f)
+metadata = pd.read_csv(META_PATH)
 
-metadata = pd.read_csv('indexed_metadata.csv')
+# columns available (supports transition)
+CLEAN_COL = 'Subtitle Text Clean' if 'Subtitle Text Clean' in metadata.columns else 'Subtitle Text'
+RAW_COL   = 'Subtitle Text Raw'   if 'Subtitle Text Raw'   in metadata.columns else CLEAN_COL
+
+# Utils
+_space_re = re.compile(r'\s+')
+
+def normalize_minimal(text: str) -> str:
+    """Lowercase + collapse spaces. No stopword removal. No punctuation strip."""
+    if not isinstance(text, str):
+        return ''
+    t = text.lower()
+    t = _space_re.sub(' ', t).strip()
+    return t
+
+def highlight_exact_phrase(text: str, phrase: str) -> str:
+    """
+    Escape HTML then highlight the exact query as a whole word/phrase (case-insensitive).
+    Prevents 'ai' from highlighting inside 'domain'.
+    """
+    safe = html.escape(text or '')
+    p = (phrase or '').strip()
+    if not p:
+        return safe
+
+    if ' ' not in p:
+        pattern = re.compile(rf'(?<![A-Za-z0-9_]){re.escape(p)}(?![A-Za-z0-9_])', re.IGNORECASE)
+    else:
+        parts = [re.escape(w) for w in re.split(r'\s+', p)]
+        inner = r'\s+'.join(parts)
+        pattern = re.compile(rf'(?<![A-Za-z0-9_]){inner}(?![A-Za-z0-9_])', re.IGNORECASE)
+
+    return pattern.sub(r'<mark>\g<0></mark>', safe)
 
 def timestamp_to_seconds(timestamp):
-    parts = timestamp.split(':')
-    return int(float(parts[0]) * 3600 + float(parts[1]) * 60 + float(parts[2]))
+    try:
+        h, m, s = timestamp.split(':')
+        return int(h) * 3600 + int(m) * 60 + float(s)
+    except Exception:
+        return 0
 
-def search_subtitles(query, top_n=5):
-    query = query.lower()
-    query_vector = vectorizer.transform([query])
-    similarities = cosine_similarity(query_vector, tfidf_matrix).flatten()
-    top_indices = np.argsort(similarities)[::-1][:top_n]
+# Core search
+def search_subtitles(query):
+    """
+    Returns (results_df, total_hits)
+    - Results are ALL positive-similarity matches, sorted by relevance (desc).
+    - Context uses RAW text; highlight is exact-phrase on the match line only.
+    """
+    raw_query = (query or '').strip()
+    q_norm = normalize_minimal(raw_query)
+    if not q_norm:
+        return pd.DataFrame(), 0
 
-    if all(similarities[top_indices] == 0):
-        return pd.DataFrame()
+    sims = cosine_similarity(vectorizer.transform([q_norm]), tfidf_matrix).flatten()
+    order = np.argsort(sims)[::-1]
 
-    results = metadata.iloc[top_indices].copy()
-    results['Similarity Score'] = similarities[top_indices]
+    # Keep only positive-similarity hits
+    eps = 1e-12
+    pos_order = order[sims[order] > eps]
+    total_hits = int(pos_order.size)
+    if total_hits == 0:
+        return pd.DataFrame(), 0
 
-    context_blocks = []
-    jump_links = []
-    thumbnails = []
-    video_titles = []
-    timestamps_readable = []
+    # Build all results 
+    results = metadata.iloc[pos_order].copy()
 
-    for idx in top_indices:
-        row = metadata.iloc[idx]
+    links, thumbs, titles, times, contexts, scores = [], [], [], [], [], []
+    for row_idx in pos_order:
+        row = metadata.iloc[row_idx]
+        vid = row.get('YouTube ID', '')
+        start_time = row.get('Start Time', '0:00:00')
+        secs = max(0, timestamp_to_seconds(start_time) - 2)
 
-        #  YT ID  from  metadata
-        video_id = row['YouTube ID']
-        video_title = row['Video Title'].strip().lower()
-        seconds = timestamp_to_seconds(row['Start Time'])
+        links.append(f"https://www.youtube.com/watch?v={vid}&t={secs}s" if vid else '')
+        times.append(start_time)
+        thumbs.append(f"https://img.youtube.com/vi/{vid}/hqdefault.jpg" if vid else '')
+        titles.append((row.get('Video Title') or '').title())
+        scores.append(float(sims[row_idx]))
 
-        # jump link
-        link = f"https://www.youtube.com/watch?v={video_id}&t={seconds}s" if video_id else ''
-        jump_links.append(link)
+        # RAW context with same-video guard
+        before_raw = after_raw = ''
+        if row_idx > 0 and metadata.iloc[row_idx - 1].get('YouTube ID', '') == vid:
+            before_raw = metadata.iloc[row_idx - 1].get(RAW_COL, '')
+        if row_idx + 1 < len(metadata) and metadata.iloc[row_idx + 1].get('YouTube ID', '') == vid:
+            after_raw = metadata.iloc[row_idx + 1].get(RAW_COL, '')
 
-        #  timestamp
-        readable_time = row['Start Time']
-        timestamps_readable.append(readable_time)
+        match_raw = row.get(RAW_COL, '')
+        match_hl = highlight_exact_phrase(match_raw, raw_query)
 
-        # Thumbnail URL
-        thumbnail = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg" if video_id else ''
-        thumbnails.append(thumbnail)
+        context = f"{html.escape(before_raw or '')}\n{match_hl}\n{html.escape(after_raw or '')}"
+        contexts.append(context)
 
-        # video title
-        video_titles.append(video_title.title())
+    results['Context Block']     = contexts
+    results['Jump Link']         = links
+    results['Thumbnail']         = thumbs
+    results['Video Title Clean'] = titles
+    results['Readable Time']     = times
+    results['Similarity Score']  = scores  # handy for debugging/thresholds
 
-        # Context block
-        before = metadata.iloc[idx - 1]['Subtitle Text'] if idx > 0 else ''
-        match_line = row['Subtitle Text']
-        after = metadata.iloc[idx + 1]['Subtitle Text'] if idx + 1 < len(metadata) else ''
-        highlighted = re.sub(f"({re.escape(query)})", r"<mark>\1</mark>", match_line, flags=re.IGNORECASE)
-        context = f"{before}\n{highlighted}\n{after}"
-        context_blocks.append(context)
+    return results, total_hits
 
-    results['Context Block'] = context_blocks
-    results['Jump Link'] = jump_links
-    results['Thumbnail'] = thumbnails
-    results['Video Title Clean'] = video_titles
-    results['Readable Time'] = timestamps_readable
-
-    return results.sort_values(by='Similarity Score', ascending=False)
-
+# Routes
 @app.route("/", methods=["GET", "POST"])
 def index():
     results = None
     query = ""
-    selected_count = 5  # Default value
+    total_hits = 0
     if request.method == "POST":
-        query = request.form.get("query")
-        selected_count = int(request.form.get("count", 5))  # Use dropdown value
-        if query:
-            results_df = search_subtitles(query, top_n=selected_count)
-            results = results_df.to_dict(orient="records") if not results_df.empty else []
-    return render_template("index.html", results=results, query=query, selected_count=selected_count)
+        query = request.form.get("query", "")
+        if query.strip():
+            df, total_hits = search_subtitles(query)
+            results = df.to_dict(orient="records") if not df.empty else []
+    return render_template("index.html", results=results, query=query, total_hits=total_hits)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 7860))
+    app.run(host="0.0.0.0", port=port, debug=False)
